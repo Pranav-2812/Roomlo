@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import "../Styles/Navbar.css"
 import logo from "../assets/Logo.png"
+import whatsappLogo from "../assets/Whatsapp.png"
+import MoneyLogo from "../assets/Money.png"
 const Navbar = () => {
     const [open, setOpen] = useState(false) //to check if side bar is open
     const openSideBar = () => {
@@ -38,13 +40,9 @@ const Navbar = () => {
                     </span>
                 </div>
                 <div className="second_half">
-                    <span className='accounts'>
-                        <h3>Owner/</h3>
-                        <h3>User</h3>
-                    </span>
                     <span className='icons'>
-                        <i className="fa-regular fa-heart"></i>
-                        <p>Wishlist</p>
+                        <img src={whatsappLogo}></img>
+                        <p>Whatsapp</p>
                     </span>
                     <span className='icons'>
                         <i class="fa-regular fa-user"></i>
@@ -57,19 +55,44 @@ const Navbar = () => {
                     <ul className='list'>
                         <li>
                             <i class="fa-solid fa-house"></i>
-                            <h3>Home</h3>
+                            <p>Home</p>
                         </li>
                         <li>
                             <i class="fa-solid fa-map"></i>
-                            <h3>Map</h3>
+                            <p>Map</p>
                         </li>
                         <li>
-                            <i class="fa-solid fa-wallet"></i> 
-                            <h3>Pay Rent</h3>  
+                            <i class="fa-regular fa-heart"></i> 
+                            <p>Wishlist</p>  
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-door-open"></i>
+                            <p>My Rooms</p>
+                        </li>
+                        <hr style={{border:"1px solid grey"}}/>
+                        <li>
+                            <i class="fa-regular fa-user"></i>
+                            <p>Profile</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-sack-dollar"></i>
+                            <p>Payments</p>
+                        </li>
+                        <li>
+                            <img  src={MoneyLogo}/>
+                            <p>Tax</p>
                         </li>
                         <li>
                             <i class="fa-solid fa-clock-rotate-left"></i>
-                            <h3>History</h3>
+                            <p>History</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Setting</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-question"></i>
+                            <p>Help and Support</p>
                         </li>
                     </ul>
                 </div>
