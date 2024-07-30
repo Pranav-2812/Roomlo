@@ -45,7 +45,7 @@ const Navbar = () => {
                         <p>Whatsapp</p>
                     </span>
                     <span className='icons'>
-                        <i class="fa-regular fa-user"></i>
+                        <i className="fa-regular fa-user"></i>
                         <p>Sign in</p>
                     </span>
                 </div>
@@ -54,28 +54,28 @@ const Navbar = () => {
                 <div className="side_bar_contents">
                     <ul className='list'>
                         <li>
-                            <i class="fa-solid fa-house"></i>
+                            <i className="fa-solid fa-house"></i>
                             <p>Home</p>
                         </li>
                         <li>
-                            <i class="fa-solid fa-map"></i>
+                            <i className="fa-solid fa-map"></i>
                             <p>Map</p>
                         </li>
                         <li>
-                            <i class="fa-regular fa-heart"></i> 
+                            <i className="fa-regular fa-heart"></i> 
                             <p>Wishlist</p>  
                         </li>
                         <li>
-                            <i class="fa-solid fa-door-open"></i>
+                            <i className="fa-solid fa-door-open"></i>
                             <p>My Rooms</p>
                         </li>
                         <hr style={{border:"1px solid grey"}}/>
                         <li>
-                            <i class="fa-regular fa-user"></i>
+                            <i className="fa-regular fa-user"></i>
                             <p>Profile</p>
                         </li>
                         <li>
-                            <i class="fa-solid fa-sack-dollar"></i>
+                            <i className="fa-solid fa-sack-dollar"></i>
                             <p>Payments</p>
                         </li>
                         <li>
@@ -83,15 +83,15 @@ const Navbar = () => {
                             <p>Tax</p>
                         </li>
                         <li>
-                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <i className="fa-solid fa-clock-rotate-left"></i>
                             <p>History</p>
                         </li>
                         <li>
-                            <i class="fa-solid fa-gear"></i>
+                            <i className="fa-solid fa-gear"></i>
                             <p>Setting</p>
                         </li>
                         <li>
-                            <i class="fa-solid fa-circle-question"></i>
+                            <i className="fa-solid fa-circle-question"></i>
                             <p>Help and Support</p>
                         </li>
                     </ul>
