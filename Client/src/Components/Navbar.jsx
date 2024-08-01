@@ -30,9 +30,9 @@ const Navbar = () => {
             <div className='navbar_main'>
                 <div className="first_half">
                     <span className='side_bar_btn' onClick={openSideBar}>
-                        <hr />
-                        <hr />
-                        <hr />
+                        <hr className='hr' />
+                        <hr className='hr' />
+                        <hr className='hr'/>
                     </span>
                     <span className='logo_name'>
                         <img src={logo} />
