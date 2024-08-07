@@ -2,10 +2,12 @@ import React from "react";
 import "../Styles/Deskstop.css";
 import InfoCard from "./InfoCard";
 
+
 const Desktop = () => {
  
   return (
     <>
+    
       <div className="container">
         <div className="row my-4 justify-content-center align-items-center" id="filter_search">
           <div className="col-12 col-md-8 mb-2">

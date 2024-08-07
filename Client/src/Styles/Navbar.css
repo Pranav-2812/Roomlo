@@ -158,6 +158,11 @@
 .list>li>p{
     margin-bottom: 0;
 }
+.link, .link:visited,.link:active{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
 @media (max-width:515px){
     .accounts{
         letter-spacing: 0;
