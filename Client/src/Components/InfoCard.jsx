@@ -33,8 +33,8 @@ const InfoCard = () => {
             </div>
             <div className="card-content">
                 <h3>RS.1200/month</h3>
-                <h5>Double Sharing <p style={{ color: "grey", marginTop: '2px' }}>Bachlor</p></h5>
-                <h6 style={{ color: "grey" }}>220 sq.ft</h6><span><i className="fa-solid fa-location-dot"></i>900m</span>
+                <h5>Double Sharing <p style={{ color: "grey", marginTop: '2px' }}>&ensp;<small>Bachlor</small></p></h5>
+                <h6 style={{ color: "grey" }}>220 sq.ft</h6><span><i className="fa-solid fa-location-dot"></i>&ensp;900m</span>
                 <p style={{ color: "grey" }}>Available from : 21 March 2024</p>
                 <button className='btn my-2 w-50 btn-danger'>Book</button>
             </div>
