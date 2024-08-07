@@ -4,8 +4,9 @@ import room from "../assets/room.png"
 const InfoCard = () => {
     return (
         <div className='card-main'>
-            <div id="carouselExampleIndicators" className="carousel slide">
-                <div className="carousel-indicators">
+            <div id="carouselExampleIndicators" className="carousel slide" style={{zIndex: "0"}}>
+                <div className="carousel-indicators" >
+                    
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -32,15 +33,15 @@ const InfoCard = () => {
             </div>
             <div className="card-content">
                 <h3>RS.1200/month</h3>
-                <h5>Double Sharing <h6 style={{ color: "grey", marginTop: '2px' }}>Bachlor</h6></h5>
-                <p style={{ color: "grey" }}>220 sq.ft</p><p><i class="fa-solid fa-location-dot"></i>900m</p>
+                <h5>Double Sharing <p style={{ color: "grey", marginTop: '2px' }}>Bachlor</p></h5>
+                <h6 style={{ color: "grey" }}>220 sq.ft</h6><span><i className="fa-solid fa-location-dot"></i>900m</span>
                 <p style={{ color: "grey" }}>Available from : 21 March 2024</p>
                 <button className='btn my-2 w-50 btn-danger'>Book</button>
             </div>
             <div className="icon-btns">
                 <i className="fa-regular fa-heart"></i>
-                <i class="fa-solid fa-share"></i>
-                <i class="fa-solid fa-location-dot"></i>
+                <i className="fa-solid fa-share"></i>
+                <i className="fa-solid fa-location-dot"></i>
             </div>
         </div>
     )

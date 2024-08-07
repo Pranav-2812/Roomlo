@@ -1,6 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "../Styles/Login.css";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "../context/firebase";
+import { auth } from "../context/firebase";
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+     
+  const onLogin = (e) => {
+      e.preventDefault();
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          localStorage.setItem("token", user.accessToken); 
+          navigate("/desktop")
+          console.log(user);
+          
+      })
+      .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage)
+      });
+     
+  }
   return (
     <div>
       <section className="vh-100 gradient-custom">
@@ -17,25 +42,27 @@ const Login = () => {
                       <p className="text-white-50 mb-5">Please enter your login and password!</p>
 
                       <div data-mdb-input-init className="form-outline form-white mb-4">
-                        <input type="email" id="typeEmailX" className="form-control form-control-lg" />
-                        <label className="form-label" htmlFor="typeEmailX">Email</label>
+                      <label className="form-label d-flex justify-left" htmlFor="email">Email</label>
+                        <input type="email" id="email" className="form-control form-control-lg" autoComplete='on' onChange={(e)=>setEmail(e.target.value)} />
+                        
                       </div>
 
                       <div data-mdb-input-init className="form-outline form-white mb-4">
-                        <input type="password" id="typePasswordX" className="form-control form-control-lg" />
-                        <label className="form-label" htmlFor="typePasswordX">Password</label>
+                      <label className="form-label d-flex justify-left" htmlFor="password">Password</label>
+                        <input type="password" id="password" autoComplete='on' className="form-control form-control-lg" onChange={(e)=>setPassword(e.target.value)} />
+                        
                       </div>
 
-                      <p className="small mb-5 pb-lg-2"><a className="text-white-50" href="#!">Forgot password?</a></p>
+                     
 
-                      <button data-mdb-button-init data-mdb-ripple-init className="btn btn-outline-light btn-lg px-5" id='Loginbtn' type="submit">Login</button>
+                      <button data-mdb-button-init data-mdb-ripple-init className="btn btn-outline-light btn-lg px-5" id='Loginbtn' type="submit"  onClick={onLogin}   >Login</button>
 
 
                     </div>
                   </form>
 
-                  <div>
-                    <p className="mb-0">Don't have an account? <a href="#!" className="text-white-50 fw-bold">Sign Up</a>
+                  <div className=' py-3'>
+                    <p className="mb-0 ">Don't have an account? <Link to="/signup" className="text-white-50 fw-bold w-50">Sign Up</Link>
                     </p>
                   </div>
 
