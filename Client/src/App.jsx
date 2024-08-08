@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar'
 import Details from "./Components/Details"
 import Login from "./Components/Login"
 import Signup from './Components/Signup'
+import Profile from './Components/Profile'
 import { BrowserRouter as Router} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
 function App() {
@@ -21,6 +22,7 @@ function App() {
                <Route path='/login' element={<Login/>}/>
                <Route path='/desktop' element={<Desktop/>}/>
                <Route path='/details' element={<Details/>}/>
+               <Route path='/profile' element={<Profile/>}/>
             </Routes>                    
         </section>
       </div>

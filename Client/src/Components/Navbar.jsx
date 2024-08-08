@@ -96,7 +96,7 @@ const Navbar = () => {
             <hr style={{ border: "1px solid grey" }} />
             <li>
               <i className="fa-regular fa-user"></i>
-              <Link className="link" to="/">Profile</Link>
+              <Link className="link" to="/profile">Profile</Link>
             </li>
             <li>
               <i className="fa-solid fa-sack-dollar"></i>
