@@ -21,7 +21,7 @@ const Signup = () => {
 
       // Save additional user information in Firestore
       await setDoc(doc(db, "Users", user.uid), {
-        name: name,
+        name: "",
         phone: phone,
         email: email,
         fullName: "",  // You can add more fields as needed
