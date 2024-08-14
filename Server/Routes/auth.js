@@ -38,4 +38,23 @@ router.post("/create_new/user",async(req,res)=>{
         console.log(error.message);
     }
 })
+//login
+router.post("/login/user",async(req,res)=>{
+    const{email, password} = req.body;
+    try {
+        const existUser = await fetchSignInMethodsForEmail(auth, email);    
+        if(existUser.length == 0){
+            return res.status(400).json({success:false,msg:"User does not exists!"});
+        }
+        else{
+            let user;
+            await signInWithEmailAndPassword(auth, email,password).then((credentials)=>{
+                user = credentials.user;
+                return res.status(200).json({success:true,user});
+            });
+        }
+    } catch (error) {
+        console.log(error.message);
+    }
+})
 module.exports = router;
