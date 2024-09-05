@@ -37,3 +37,65 @@
     width: 300px;
     border-radius: 30px;
 }
+@media (max-width:1415px) {
+    .card-main{
+        
+        gap: 2%;
+        padding: 1% 1% 1% 1%;
+    }
+    .card-main>#carouselExampleIndicators{
+        scale: 0.95;
+    }
+
+    .card-content>h5,h6,p{
+        font-size: 15px;
+    }
+ 
+    
+}
+
+@media (max-width:1300px) {
+    .card-main{
+       
+        gap: 0.1%;
+        padding: 1% 0.5% 1% 0.5%;
+    }
+    .card-main>#carouselExampleIndicators{
+        scale: 0.90;
+    }
+    .card-content>h3{
+        font-size: 20px;
+    }
+
+}
+@media (max-width:1150px) {
+    .card-main{
+        gap: 0;
+        padding: 0.5% 0% 0.5% 0%;
+    }
+    .card-main>#carouselExampleIndicators{
+        scale: 0.85;
+    }
+    .card-content{
+        margin-left: -3%;
+        width: 175px;
+    }
+    .card-content>h5,h6,p{
+        font-size: 12px;
+    }
+}
+@media (max-width:1024px) {
+    .card-main{
+        padding: 0;
+    }
+    .card-main>#carouselExampleIndicators{
+        scale: 0.80;
+    }
+    .card-content{
+        margin-left: -3%;
+        width: 150px;
+    }
+    .card-content>h5,h6,p{
+        font-size: 10px;
+    }
+}
