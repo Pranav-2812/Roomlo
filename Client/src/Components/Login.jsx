@@ -55,7 +55,7 @@ const Login = () => {
 
                      
 
-                      <button data-mdb-button-init data-mdb-ripple-init className="btn btn-outline-light btn-lg px-5" id='Loginbtn' type="submit"  onClick={onLogin}   >Login</button>
+                      <button data-mdb-button-init data-mdb-ripple-init className="btn btn-outline-light btn-lg px-5" id='Loginbtn' type="submit"  onClick={onLogin}   > Login</button>
 
 
                     </div>
