@@ -38,8 +38,8 @@ const Signup = () => {
 
   return (
     <div>
-      <section className="vh-100 gradient-custom">
-        <div className="container py-2 h-100">
+      <section className=" gradient-custom p-4">
+        <div className="container py-2 h-75">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
               <div className="card bg-dark text-white">
@@ -47,7 +47,7 @@ const Signup = () => {
                   <form onSubmit={onSubmit}>
                     <div className="mb-md-5 mt-md-4 pb-5">
                       <h2 className="fw-bold mb-2 text-uppercase">Signup</h2>
-                      <p className="text-white-50 mb-5">Please Create your Account!</p>
+                      <h5 className="text-white-50 mb-5">Please Create your Account!</h5>
                       <div className="form-outline form-white mb-4">
                         <label className="form-label d-flex justify-left" htmlFor="number">Mobile Number</label>
                         <input
@@ -85,7 +85,7 @@ const Signup = () => {
                     </div>
                   </form>
                   <div className="my-3">
-                    <Link to="/login" className="text-white-50 fw-bold">Login</Link>
+                    <h5>If already created account?  <Link to="/login" className="text-white-50 fw-bold"> Login</Link></h5>
                   </div>
                 </div>
               </div>
