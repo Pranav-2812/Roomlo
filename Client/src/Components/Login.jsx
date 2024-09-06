@@ -29,17 +29,17 @@ const Login = () => {
   return (
     <div>
       <section className=" gradient-custom">
-        <div className="container py-5 h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
+        <div className="container my-5">
+          <div className="row d-flex justify-content-center align-items-center">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
               <div className="card bg-dark text-white" >
-                <div className="card-body p-5 text-center">
+                <div className="card-body p-4 text-center">
 
                   <form>
-                    <div className="mb-md-5 mt-md-4 pb-5">
+                    <div className="mb-md-5 mt-md-4 pb-2">
 
                       <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                      <h5 className="text-white-50 mb-5 ">Please enter your login and password!</h5>
+                      {/* <p className="text-white-50 mb-5">Please enter your login and password!</p> */}
 
                       <div data-mdb-input-init className="form-outline form-white mb-4">
                       <label className="form-label d-flex justify-left" htmlFor="email">Email</label>
@@ -61,9 +61,10 @@ const Login = () => {
                     </div>
                   </form>
 
-                  <div className=' py-3'>
-                    <h5 className="mb-0 ">Don't have an account?  <Link to="/signup" className="text-white-50 fw-bold w-50">Sign Up</Link>
-                    </h5>
+                  <div className='  py-3 '>
+                    <p className="d-flex justify-content-center mx-5 w-75 ">Don't have an account? &ensp;
+                      <Link to="/signup" className="text-white-50 fw-bold ">Sign Up</Link>
+                    </p>
                   </div>
 
                 </div>

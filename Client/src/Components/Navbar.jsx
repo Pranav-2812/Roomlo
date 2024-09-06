@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/Navbar.css";
 import logo from "../assets/Logo.png";
 import whatsappLogo from "../assets/Whatsapp.png";
 import MoneyLogo from "../assets/Money.png";
-import { Link , useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import {  signOut } from "firebase/auth";
-import { auth} from "../context/firebase";
+import { signOut } from "firebase/auth";
+import { auth } from "../context/firebase";
 const Navbar = () => {
   const [open, setOpen] = useState(false); //to check if side bar is open
   const openSideBar = () => {
@@ -15,6 +15,7 @@ const Navbar = () => {
       document
         .querySelector(".side_bar_btn")
         .classList.toggle("side_bar_btn_after");
+        document.querySelector('body').style.overflow = 'hidden';
       setOpen((open) => (open = true));
     } else {
       closeSideBar();
@@ -25,6 +26,7 @@ const Navbar = () => {
     document
       .querySelector(".side_bar_btn")
       .classList.remove("side_bar_btn_after");
+      document.querySelector('body').style.overflow = 'auto';
     setOpen((open) => (open = false));
   };
   window.onclick = (e) => {
@@ -44,10 +46,14 @@ const Navbar = () => {
         console.log("Signed out successfully");
       })
       .catch((error) => {
-        // An error happened.
+        console.log(error.meessage);
       });
   };
- 
+  useEffect(()=>{
+    if(!localStorage.getItem('token')){
+      navigate('/login')
+    }
+  },[])
   return (
     <>
       <div className="navbar_main">
@@ -70,7 +76,7 @@ const Navbar = () => {
           <span className="icons">
             <i className="fa-regular fa-user"></i>
             <p><Link
-            className="link" to="/signup">Signup</Link></p>
+              className="link" to="/signup">Signup</Link></p>
           </span>
         </div>
       </div>
@@ -79,7 +85,7 @@ const Navbar = () => {
           <ul className="list">
             <li>
               <i className="fa-solid fa-house"></i>
-              <Link  className="link" to="/desktop">Home</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/desktop"}>Home</Link>
             </li>
             <li>
               <i className="fa-solid fa-map"></i>
@@ -87,20 +93,20 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-regular fa-heart"></i>
-              <Link className="link" to="/cats">Wishlist</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/"}>Wishlist</Link>
             </li>
             <li>
               <i className="fa-solid fa-door-open"></i>
-              <Link className="link" to="/">My Rooms</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/"}>My Rooms</Link>
             </li>
             <hr style={{ border: "1px solid grey" }} />
             <li>
               <i className="fa-regular fa-user"></i>
-              <Link className="link" to="/profile">Profile</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/profile"} >Profile</Link>
             </li>
             <li>
               <i className="fa-solid fa-sack-dollar"></i>
-              <Link className="link" to={!localStorage.getItem("token")? "/details":"/login"}>Payments</Link>
+              <Link className="link" to={!localStorage.getItem("token") ? "/details" : "/login"}>Payments</Link>
             </li>
             <li>
               <img src={MoneyLogo} />
@@ -120,8 +126,8 @@ const Navbar = () => {
             </li>
             <li onClick={handleLogout}>
               <i className="fa-solid fa-circle-question"></i>
-              <Link className="link" to={!localStorage.getItem("token")? "/home":"/logout"} >
-               Logout
+              <Link className="link" to={!localStorage.getItem("token") ? "/home" : "/logout"} >
+                Logout
               </Link>
             </li>
           </ul>
