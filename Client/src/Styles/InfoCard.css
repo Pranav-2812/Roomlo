@@ -9,8 +9,11 @@
     gap: 3%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 35px;
-    padding: 1% 2% 1% 2%;
-    margin: 1% 1%;
+    margin: 1% 1% 1% 1% !important;
+    
+}
+.card-main>#carouselExampleIndicators{
+    margin-left: 0.70%;
 }
 .card-content{
     width: 40%;
@@ -22,16 +25,22 @@
     gap: 1%;
     margin: 0;
 }
+.card-content>span>button{
+    display: none;
+}
 .icon-btns{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 15vh;
     gap: 10%;
 }
 .icon-btns>i{
     scale: 1.3;
+}
+.icon-btns-secondary{
+    display: none;
 }
 .carousel-inner{
     width: 300px;
@@ -41,10 +50,11 @@
     .card-main{
         
         gap: 2%;
-        padding: 1% 1% 1% 1%;
+        /* padding: 1% 1% 1% 1%; */
     }
     .card-main>#carouselExampleIndicators{
         scale: 0.95;
+        margin-left: 0.1%;
     }
 
     .card-content>h5,h6,p{
@@ -58,10 +68,11 @@
     .card-main{
        
         gap: 0.1%;
-        padding: 1% 0.5% 1% 0.5%;
+        /* padding: 1% 0.5% 1% 0.5%; */
     }
     .card-main>#carouselExampleIndicators{
         scale: 0.90;
+        margin-left: -1%;
     }
     .card-content>h3{
         font-size: 20px;
@@ -71,10 +82,11 @@
 @media (max-width:1150px) {
     .card-main{
         gap: 0;
-        padding: 0.5% 0% 0.5% 0%;
+        /* padding: 0.5% 0% 0.5% 0%; */
     }
     .card-main>#carouselExampleIndicators{
         scale: 0.85;
+        margin-left: -1.75%;
     }
     .card-content{
         margin-left: -3%;
@@ -83,6 +95,10 @@
     .card-content>h5,h6,p{
         font-size: 12px;
     }
+    .icon-btns{
+        height: 10vh;
+        padding-left: 5%;
+    }
 }
 @media (max-width:1024px) {
     .card-main{
@@ -90,6 +106,7 @@
     }
     .card-main>#carouselExampleIndicators{
         scale: 0.80;
+        margin-left: -5%;
     }
     .card-content{
         margin-left: -3%;
@@ -97,5 +114,231 @@
     }
     .card-content>h5,h6,p{
         font-size: 10px;
+    }
+}
+@media (max-width:960px) {
+    .card-main{
+        width: 100%;
+        gap: 15%;
+        justify-content:center;
+    }
+    .card-main>#carouselExampleIndicators{
+       transform: scaleX(1.7) scaleY(1.2);
+       margin-left: 6.5%;
+    }    
+    .card-content{
+        width: 30%;
+        margin-left: -5%;
+    }
+    .card-content>h5,h6,p{
+        font-size: 17px;
+    }
+    .icon-btns{
+        height: 15vh;
+        gap: 10%;
+        padding-right: 5%;
+    }
+    .icon-btns>i{
+        scale: 1.5;
+    }
+}
+@media (max-width:840px) {
+    .card-main{
+        gap: 10%;
+    }
+    .card-main>#carouselExampleIndicators{
+        transform: scaleX(1.4) scaleY(1.2);
+        margin-left: 3%;
+     }  
+     .card-content{
+        margin-left: -3%;
+     }
+     .card-content>h5,h6,p{
+        font-size: 15px;
+    }
+    .icon-btns{
+        padding-left: 5%;
+    }
+}
+@media (max-width:750px) {
+    .card-main>#carouselExampleIndicators{
+        transform: scaleX(1.3) scaleY(1.2);
+        margin-left: 5%;
+    }
+}
+@media (max-width:680px) {
+    .card-main>#carouselExampleIndicators{
+        scale: 0.75;
+        margin-left: 5.5%;
+    }
+    .card-content>h5,h6,p{
+        font-size: 12px;
+    }
+    .card-content{
+        margin-left: -7%;
+    }
+}
+@media (max-width:650px) {
+    .card-main>#carouselExampleIndicators{
+        scale: 0.72;
+        margin-left: 4%;
+    }
+    .card-content{
+        margin-left: -8%;
+    }
+}
+
+@media (max-width:600px) {
+    .card-main{
+        gap: 7%;
+    }
+    .card-main>#carouselExampleIndicators{
+        scale: 0.7;
+        margin-left: 3%;
+    }
+    .card-content{
+        margin-left: -5%;
+    }
+    .card-content>button{
+        float: left;
+    }
+    .card-content>h5,h6,p{
+        font-size: 10px;
+    }
+    .icon-btns>i{
+        scale: 1.2;
+    }
+}
+
+@media (max-width:550px) {
+    .card-main{
+        gap: 0%;
+    }
+    .card-main>#carouselExampleIndicators{
+        
+        transform:scaleX(1.1) scaleY(1.3);
+        margin-left: -15%;
+    }
+    .card-content{
+        margin-left: -5%;
+    }
+    .icon-btns{
+        padding: 0;
+        padding-left: 5%;
+    }
+}
+@media (max-width:500px) {
+    .card-main>#carouselExampleIndicators{
+        
+        transform:scaleX(1) scaleY(1.3);
+        margin-left: -12%;
+    }
+    .card-content{
+        margin-left: -7%;
+    }
+    .icon-btns{
+        padding: 0;
+        padding-left:10%;
+    }
+}
+@media (max-width:430px) {
+    .card-main{
+        border-radius: 0px;
+    }
+    .carousel-inner{
+        border-radius: 0px;
+    }
+    .card-main>#carouselExampleIndicators{
+        
+        transform:scaleX(0.9) scaleY(1.3);
+        margin-left: -18%;
+    }
+    .card-content{
+        margin-left: -12%;
+    }
+    .card-content>button{
+        width: 60px !important;
+    }
+    .icon-btns{
+        padding-left: 5%;
+    }
+}
+@media (max-width:400px) {
+    .card-main{
+        flex-direction: column;
+        border-radius: 0px;
+    }
+    .card-main>#carouselExampleIndicators{
+        transform: scaleX(1.5) scaleY(1.3);
+        margin: 0;
+        
+    }
+    .carousel-inner{
+        border-radius: 0px;
+    }
+    .card-content{
+        width: 75%;
+    }
+    .card-content>button{
+        display: none;
+    }
+    .card-content>span{
+        width: 100% ;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10%;
+        margin-top: 1%;
+    }
+    .card-content>span>button{
+        display: block;
+        width: 25% !important;
+        margin-top: 0 !important;
+    }
+    .card-content>span>h3{
+        font-size: 20px;
+
+    }
+    .card-content>h5{
+        font-size: 15px;
+    }
+    .info-subcontent{
+        width: 75vw !important;
+        display: flex;
+        flex-direction: row;
+        align-items: start !important;
+        gap: 5% !important;
+        margin-top: 1% !important;
+    }
+    .info-subcontent>p{
+        width: 50%;
+        gap: 10%;
+        align-items: start;
+    }
+    .info-subcontent>p>big{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5%;
+    }
+    .icon-btns{
+        display: none;
+
+    }
+    .icon-btns-secondary{
+        display: flex;
+        gap: 25%;
+        scale: 1.2;
+    }
+}
+@media (max-width:350px) {
+    .card-main>#carouselExampleIndicators{
+        transform: scaleX(1.35) scaleY(1.3);
+    }
+}
+@media (max-width:330px) {
+    .card-main>#carouselExampleIndicators{
+        transform: scaleX(1.25) scaleY(1.3);
     }
 }

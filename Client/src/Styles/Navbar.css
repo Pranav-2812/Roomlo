@@ -33,6 +33,7 @@
 }
 .side_bar_btn_after{
     cursor: pointer;
+    
 }
 .side_bar_btn_after>.hr:nth-child(even){
     display: none;
@@ -102,7 +103,7 @@
 }
 .side_bar{
     display: none;
-    position: fixed;
+    position:fixed;
     z-index: 1;
     left: 0;
     right: 0;
@@ -114,6 +115,7 @@
     backdrop-filter: blur(3px);
     overflow: hidden;
 }
+
 .side_bar_contents{
     width:20vw;
     margin-left: -15%;
@@ -163,6 +165,11 @@
     list-style: none;
     color: black;
 }
+@media (max-width:1024px){
+    .side_bar_contents{
+        width: 30vw;
+    }
+}
 @media (max-width:515px){
     .accounts{
         letter-spacing: 0;
@@ -187,11 +194,7 @@
        align-items: center;
     }
 }
-@media (max-width:1024px){
-    .side_bar_contents{
-        width: 22vw;
-    }
-}
+
 
 @media (max-width:740px){
     .side_bar_contents{
@@ -212,12 +215,12 @@
 
 @media (max-width:500px){
     .side_bar_contents{
-        width:40vw;
+        width:45vw;
     }
 }
 @media (max-width:400px){
     .side_bar_contents{
-        width:47vw;
+        width:50vw;
     }
 }
 @media (max-width:320px){
