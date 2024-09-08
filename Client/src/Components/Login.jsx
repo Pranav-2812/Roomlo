@@ -60,12 +60,10 @@ const Login = () => {
 
                     </div>
                   </form>
-
-                  <div className='  py-3 '>
-                    <p className="d-flex justify-content-center mx-5 w-75 ">Don't have an account? &ensp;
-                      <Link to="/signup" className="text-white-50 fw-bold ">Sign Up</Link>
-                    </p>
+                  <div className="mt-3">
+                    <h5>Don't have an account? &ensp; <Link to="/signup" className="text-white-50 fw-bold">Sign Up</Link></h5>
                   </div>
+                 
 
                 </div>
               </div>
