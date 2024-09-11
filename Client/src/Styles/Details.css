@@ -1,3 +1,38 @@
 #linkc{
    font-size: 10px;
 }
+#details-img-card, .w-75>img{
+   height: 475px !important;
+   margin-bottom: 1%;
+}
+.card{
+   height: 475px;
+   padding: 0;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+   box-shadow: rgba(0, 0, 0, 0.16) 6px 3px 6px, rgba(0, 0, 0, 0.23) 5px 3px 6px;
+}
+.next-img{
+   width: 15%;
+   height: 80px;
+   object-fit: cover;
+   background-position: center;
+   
+}
+#badge{
+   scale: 1.5 ;
+   cursor: pointer;
+   color: grey !important;
+}
+.w-75>p,.w-75>p>a{
+   font-size: 20px;
+   color: grey;
+}
+.w-25>div>i{
+   scale: 1.7;
+}
+.phone_icon{
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+}

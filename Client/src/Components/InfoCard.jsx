@@ -1,9 +1,14 @@
 import React from 'react'
 import "../Styles/InfoCard.css"
 import room from "../assets/room.png"
+import { useNavigate } from 'react-router-dom'
 const InfoCard = () => {
+    const naviagate = useNavigate();
+    const handleCLick=()=>{
+        naviagate('/details')
+    }
     return (
-        <div className='card-main'>
+        <div className='card-main' onClick={handleCLick}>
             <div id="carouselExampleIndicators" className="carousel slide" style={{ zIndex: "0" }}>
                 <div className="carousel-indicators" >
 
