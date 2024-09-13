@@ -1,95 +1,17 @@
 import React from "react";
 import Room from "../assets/room.png";
 import "../Styles/Details.css";
-import Profile from "../assets/profile.png";
+import phone_icon from "../assets/Phone_icon.png"
 const Details = () => {
   return (
-    <>
-      <div className="container">
-        <div className="row my-4 justify-content-center" id="filter_search">
-          <div className="col-12 col-md-8 mb-2">
-            <input
-              type="search"
-              className="form-control form-control-lg shadow bg-white rounded-pill"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-              id="searchbar"
-            />
-          </div>
-          <div
-            className="col-12 col-md-4 d-flex justify-content-center"
-            id="mainFil"
-          >
-            <button
-              type="button"
-              className="btn btn-outline-secondary btn-md mx-2 shadow bg-white rounded-pill"
-              id="filter"
-            >
-              <i className="fa-solid fa-arrow-down-wide-short mx-2"></i>Filter
-            </button>
-            <button
-              type="button"
-              className="btn btn-outline-secondary btn-md mx-2 shadow bg-white rounded-pill"
-              id="filter"
-            >
-              <i className="fa-solid fa-arrow-down-wide-short mx-2"></i>Rent
-            </button>
-            <button
-              type="button"
-              className="btn btn-outline-secondary btn-md mx-2 shadow bg-white rounded-pill"
-              id="filter"
-            >
-              <i className="fa-solid fa-arrow-down-wide-short mx-2"></i>Rent
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="container-fluid">
-        <div className="row">
-          {/* Left Column for Desktop Component */}
-          <div className="col-12 col-lg-9">
-            <div className="container">
-              <div
-                id="carouselExampleSlidesOnly"
-                className="carousel slide"
-                data-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      className="img-fluid h-75 w-100"
-                      src={Room}
-                      alt="First slide"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      className="img-fluid h-75 w-100"
-                      src={Room}
-                      alt="Second slide"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      className="img-fluid h-75 w-100"
-                      src={Room}
-                      alt="Third slide"
-                    />
-                  </div>
-                </div>
-              </div>
-              <hr className="active" />
-              <img src={Room} className="img-thumbnail h-25 w-25" alt="..." />
-              <img src={Room} className="img-thumbnail h-25 w-25" alt="..." />
+    <div className="col">
+      <div className="container px-2">
+        <div className="col">
+          <div className="row mt-5" id="details-img-card">
+            <div className="w-75">
+              <img src={Room} className="h-75 w-100 rounded-3" alt="..." />
             </div>
-          </div>
-
-          {/* Right Column for Card Component */}
-          {/* Right Column for Card Component */}
-          <div className="col-12 col-lg-3 col">
-            <div className="card" style={{ width: "25rem", height: "25rem" }}>
+            <div className="card w-25" >
               <div className="card-body">
                 <ul>
                   <li>
@@ -133,47 +55,148 @@ const Details = () => {
                     Get All room of India in only one app.
                   </h5>
                 </ul>
-                <a href="#" className="card-link fs-5" id="linkc">
-                  1000+ tenants/buyers
-                </a>
-                <a href="#" className="card-link fs-5" id="linkc">
-                  400+ Owner/Sellers
-                </a>
+                <span className="d-flex flex-row">
+                  <p href="#" className="card-link fs-5 w-50 ms-2" id="linkc">
+                    1000+ tenants/buyers
+                  </p>
+                  <p className="card-link fs-5 w-50 ms-2 " id="linkc">
+                    400+ Owner/Sellers
+                  </p>
+                </span>
               </div>
-              <button type="button" className="btn btn-danger btn-lg">
-                Dark
+              <button type="button" className="btn btn-danger btn-lg rounded-0 ">
+                Book
               </button>
             </div>
           </div>
-        </div>
-      </div>
-      <hr />
-      <div className="container">
-        <div className="" style={{ width: "18rem" }}>
-          <div className="card-body">
-            <div className="mb-4">
-              <button type="button" className="btn btn-outline-secondary mx-4 fs-5">Photos</button>
-
-              <button type="button" className="btn btn-outline-secondary fs-5">Videos</button>
-
-            </div>
-            <h1 className="card-title">Rs. 1200/month</h1>
-            <div className="card-text"><h4>Double Sharing </h4></div>
-            <div><h4>Available from : 21 March 2024</h4></div>
-            <div><h4>Name: Giradkar</h4></div>
-            <div id="icon">
-              <i className="fa-solid fa-location-dot fa-beat fa-xl" style={{ color: "#000000" }}></i>
-              <i className="fa-regular fa-heart fa-beat fa-xl mx-3"></i>
-              <i className="fa-solid fa-share fa-beat fa-xl" style={{ color: "#050505" }}></i>
-            </div>
-
-          </div>
-          <div className="mt-4">
-            <i className="fa-solid fa-phone fa-2xl" style={{ color: "#ffffff" }}></i>
+          <div className="row " >
+            <img src={Room} className="next-img" alt="..." />
+            <img src={Room} className="next-img" alt="..." />
+            <img src={Room} className="next-img" alt="..." />
           </div>
         </div>
+        <hr />
+        <div className="col px-3">
+          <span className="badge text-bg-light border border-secondary-subtle me-5" id="badge">Photos</span>
+          <span className="badge text-bg-light border border-secondary-subtle  me-5" id="badge">Videos</span>
+        </div>
       </div>
-    </>
+      <div className="container my-3">
+        <div className="row">
+          <div className="w-75">
+            <h2>Rs.1200/month</h2>
+            <span className="d-flex flex-row align-items-center ">
+              <h3>Double Sharing</h3>
+              <h4 className="ms-2" style={{ color: "grey", marginBottom: "5px" }}>(Bachlor)</h4>
+            </span>
+            <span className="d-flex flex-row align-items-center" style={{ color: "grey" }}>
+              <i className="fa-solid fa-location-dot me-2 pb-2"></i>
+              <h4>900m</h4>
+            </span>
+            <p>Available from :21 March 2024</p>
+            <p><a href="#" className="link-underline-secondary">Name: Giradkar</a></p>
+          </div>
+          <div className="col w-25">
+            <div className="d-flex justify-content-end">
+              <i className="fa-regular fa-heart me-4"></i>
+              <i className="fa-solid fa-share me-4"></i>
+              <i className="fa-solid fa-location-dot"></i>
+            </div>
+            <div className="d-flex justify-content-end mt-4">
+              <img src={phone_icon} className="phone_icon"></img>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div className="col container">
+        <div className="link-container">
+          <a className="details-links" href="#about">About</a>
+          <a className="details-links" href="#address">Address</a>
+          <a className="details-links">Contact</a>
+          <a className="details-links">Similar Propeties</a>
+        </div>
+        <div className="my-4" id="about">
+          <h2>About</h2>
+            <div className="w-75 bg-info bg-opacity-25 rounded-5 my-4">
+              <div className="d-flex flex-row w-100 px-4 py-2">
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  even">
+                  <h4 className="w-50">Area:</h4>
+                  &ensp;&ensp;
+                  <p className="w-50">250sq.ft    (Medium) </p>
+                </div>
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd">
+                <h4 className="w-50">Electric Bill:</h4>
+                &ensp;&ensp;
+                <p className="w-50">Include </p>
+                </div>
+              </div>
+              <div className="d-flex flex-row w-100 px-4 py-2">
+                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center even">
+                  <h4 className="w-50">Wall:</h4>
+                  &ensp;&ensp;
+                  <p className="w-50">Putting  (White) </p></div>
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd">
+                <h4 className="w-50">Non Veg:</h4>
+                &ensp;&ensp;
+                <p className="w-50">Yes allow </p>
+                </div>
+              </div>
+              <div className="d-flex flex-row w-100 px-4 py-2">
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  even">
+                  <h4 className="w-50">Floor:</h4>
+                  &ensp;&ensp;
+                  <p className="w-50">1-3 Floor </p>
+                </div>
+                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center odd">
+                <h4 className="w-50">Wifi:</h4>
+                &ensp;&ensp;
+                <p className="w-50">Yes </p>
+                </div>
+              </div>
+              <div className="d-flex flex-row w-100 px-4 py-2">
+                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center even">
+                  <h4 className="w-50">Tiles:</h4>
+                  &ensp;&ensp;
+                  <p className="w-50">Yes </p>
+                </div>
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd">
+                <h4 className="w-50">Aminities:</h4>
+                &ensp;&ensp;
+                <p className="w-50">Bed,Fan,Almari, Light</p>
+                </div>
+              </div>
+              <div className="d-flex flex-row w-100 px-4 py-2">
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center even ">
+                  <h4 className="w-50">Parking:</h4>
+                  &ensp;&ensp;
+                  <p className="w-50">2 wheller,4 wheeler </p>
+                </div>
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd"></div>
+              </div>
+              <div className="d-flex flex-row w-100 px-4 py-2">
+                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  even">
+                  <h4 className="w-50">Bathroom:</h4>
+                  &ensp;&ensp;
+                  <p className="w-50">2</p>
+                </div>
+                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center odd"></div>
+              </div>
+              <div className="d-flex flex-row w-100 px-4 py-2">
+                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center even">
+                  <h4 className="w-50">Toilet:</h4>
+                  &ensp;&ensp;
+                  <p className="w-50">2 </p>
+                </div>
+                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center odd"></div>
+              </div>
+            </div>
+            <h3 className="link link-danger" style={{cursor:"pointer"}}>View more details -&gt;</h3>
+        </div>
+        <hr className="active" style={{border:"10px solid grey"}}></hr>
+        <div className="my-4" id="address"></div>
+      </div> 
+    </div>
   );
 };
 export default Details;

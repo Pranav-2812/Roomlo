@@ -10,6 +10,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 35px;
     margin: 1% 1% 1% 1% !important;
+    cursor: pointer;
     
 }
 .card-main>#carouselExampleIndicators{
