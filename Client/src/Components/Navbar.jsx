@@ -75,8 +75,8 @@ const Navbar = () => {
           </span>
           <span className="icons">
             <i className="fa-regular fa-user"></i>
-            <p><Link
-              className="link" to="/signup">Signup</Link></p>
+            <p>{!localStorage.getItem('token')?<Link
+              className="link" to="/signup">Signup</Link>:"User"}</p>
           </span>
         </div>
       </div>
