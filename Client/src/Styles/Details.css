@@ -70,3 +70,63 @@
    border-left: 2px grey;
    border-bottom: 2px grey;
 }
+#property-acivity, #property-contact{
+   height: 20vh !important;
+   cursor: pointer;
+   transition: all ease 0.2s;
+}
+#property-acivity:hover, #property-contact:hover{
+   box-shadow: rgba(0, 0, 0, 0.16) 6px 10px 6px, rgba(0, 0, 0, 0.23) 10px 3px 6px;
+}
+#property-contact{
+   background: #E0F0FF;
+}
+.property-activity-card{
+   width: 15%;
+   height: 1.5rem;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+}
+.property-activity-info{
+   scale: 1.2;
+}
+#property-contact>div{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+}
+#property-contact>div>img{
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+}
+.contact-details{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100%;
+   gap: 5%;
+   width: 55%;
+}
+.content{
+   display: flex;
+   flex-direction: row !important;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+.content>p{
+   font-size: 15px;
+}
+#property-contact>div>span{
+   margin-top: -15%;
+}
+.modal-details>.row{
+   justify-content: center !important;
+   margin-left: 6%;
+}
+.modal-details>.row>p{
+   font-size: 15px;
+}
