@@ -99,6 +99,10 @@ const Navbar = () => {
               <i className="fa-solid fa-door-open"></i>
               <Link className="link" to={!localStorage.getItem('token')?"/login":"/"}>My Rooms</Link>
             </li>
+            <li>
+              <i className="fa-solid fa-sack-dollar"></i>
+              <Link className="link" to={!localStorage.getItem("token") ? "/Navdetails" : "/login"}>Details</Link>
+            </li>
             <hr style={{ border: "1px solid grey" }} />
             <li>
               <i className="fa-regular fa-user"></i>
@@ -106,11 +110,12 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-solid fa-sack-dollar"></i>
-              <Link className="link" to={!localStorage.getItem("token") ? "/details" : "/login"}>Payments</Link>
+              <Link className="link" to={!localStorage.getItem("token") ? "/Navdetails" : "/login"}>Payments</Link>
             </li>
+            
             <li>
               <img src={MoneyLogo} />
-              <Link className="link" to="/">Tax</Link>
+              <Link className="link" to="/Tax">Tax</Link>
             </li>
             <li>
               <i className="fa-solid fa-clock-rotate-left"></i>
@@ -122,7 +127,7 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-solid fa-circle-question"></i>
-              <Link className="link" tp="/">Help and Support</Link>
+              <Link className="link" to="/Help">Help and Support</Link>
             </li>
             <li onClick={handleLogout}>
               <i className="fa-solid fa-circle-question"></i>

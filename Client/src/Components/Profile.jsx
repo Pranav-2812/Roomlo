@@ -51,17 +51,7 @@ const Profile = () => {
     }
   };
 
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        localStorage.removeItem("token");
-        navigate("/login");
-      })
-      .catch((error) => {
-        console.error("Error signing out: ", error.message);
-      });
-  };
-
+ 
   const toggleEdit = () => {
     setIsEditing(!isEditing);
   };
@@ -213,10 +203,10 @@ const Profile = () => {
 
       <div className="card-body mt-3">
         <div className="row">
-          <div className="col-sm-3">
+          <div className="col-sm-3 fs-5">
             <p className="mb-0">Full Name</p>
           </div>
-          <div>
+          <div className="fs-5">
             <input
               type="text"
               name="fullName"
@@ -234,7 +224,7 @@ const Profile = () => {
         <hr />
 
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-sm-6 fs-5">
             <p className="mb-0">Phone</p>
             <input
               type="text"
@@ -248,7 +238,7 @@ const Profile = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="col-sm-6">
+          <div className="col-sm-6 fs-5">
             <p className="mb-0">WhatsApp</p>
             <input
               type="text"
@@ -267,10 +257,10 @@ const Profile = () => {
         <hr />
 
         <div className="row">
-          <div className="col-sm-3">
-            <p className="mb-0">Email</p>
+          <div className="col-sm-3 fs-5">
+            <p className="mb-0 ">Email</p>
           </div>
-          <div>
+          <div className="fs-5">
             <input
               type="text"
               name="email"
@@ -279,6 +269,7 @@ const Profile = () => {
                 border: "none",
                 background: isEditing ? "#f0f0f0" : "transparent",
               }}
+              
               value={editData.email || ""}
               onChange={handleInputChange}
             />
@@ -314,11 +305,7 @@ const Profile = () => {
         </div>
       )}
 
-      <div className="text-center mt-4">
-        <button className="btn btn-danger" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
+     
     </div>
   );
 };
