@@ -133,7 +133,7 @@ const Profile = () => {
 
   return (
     <div
-      className="container mt-5 p-3 rounded"
+      className="container mt-5 p-3 rounded shadow-sm p-3 mb-5 " 
       style={{
         backgroundColor: "#EFFAF9",
         width: "100%",
@@ -141,7 +141,7 @@ const Profile = () => {
       }}
     >
       <div className="d-flex justify-content-between align-items-center">
-        <h2 className="text-center w-100">Profile</h2>
+        <h2 className="text-center w-100 ms-5 ps-2">Profile</h2>
         <button className="btn btn-dark rounded-pill" onClick={toggleEdit}>
           {isEditing ? "Cancel" : "Edit"}
         </button>
@@ -188,6 +188,7 @@ const Profile = () => {
         )}
         <h5 className="my-4">
           <input
+        
             type="text"
             name="name"
             disabled={!isEditing}
@@ -208,6 +209,7 @@ const Profile = () => {
           </div>
           <div className="fs-5">
             <input
+            className="w-100"
               type="text"
               name="fullName"
               disabled={!isEditing}
@@ -227,6 +229,7 @@ const Profile = () => {
           <div className="col-sm-6 fs-5">
             <p className="mb-0">Phone</p>
             <input
+            className="w-100"
               type="text"
               name="phone"
               disabled={!isEditing}
@@ -241,6 +244,7 @@ const Profile = () => {
           <div className="col-sm-6 fs-5">
             <p className="mb-0">WhatsApp</p>
             <input
+            className="w-100"
               type="text"
               name="whatsapp"
               disabled={!isEditing}
@@ -262,6 +266,7 @@ const Profile = () => {
           </div>
           <div className="fs-5">
             <input
+            className="w-100"
               type="text"
               name="email"
               disabled={!isEditing}
@@ -284,12 +289,13 @@ const Profile = () => {
               <p className="mb-0">Password</p>
             </div>
             <div>
-              <a href="/">Change Password</a>
+              <a href="/" className="text-decoration-none text-danger">Change Password</a>
             </div>
           </div>
         </div>
         <div className="col-sm-9">
           <input
+          className="w-100"
             type="password"
             style={{ border: "none", background: "transparent" }}
             placeholder="••••••••"

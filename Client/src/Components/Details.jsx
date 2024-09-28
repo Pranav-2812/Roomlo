@@ -354,7 +354,7 @@ const Details = () => {
           </div>
           <hr className="active" style={{ border: "10px solid grey" }}></hr>
           <div className="my-4">
-            <h2 className="text-secondary">You May Also Like</h2>
+            <h2 className="text-secondary">You May Also Like (Under development)</h2>
             <div className="more-properties w-100">
 
             </div>
