@@ -48,7 +48,7 @@ const Signup = () => {
                     <div className="mb-4">
                       <h2 className="fw-bold mb-4 text-uppercase">Signup</h2>
                       <div className="form-outline form-white mb-3">
-                        <label className="form-label" htmlFor="email">Email</label>
+                        <label className="form-label text-start w-100 ps-2" htmlFor="email">Email</label>
                         <input
                           type="email"
                           id="email"
@@ -59,7 +59,7 @@ const Signup = () => {
                         />
                       </div>
                       <div className="form-outline form-white mb-3">
-                        <label className="form-label" htmlFor="number">Mobile Number</label>
+                        <label className="form-label text-start w-100 ps-2" htmlFor="number">Mobile Number</label>
                         <input
                           type="text"
                           id="number"
@@ -70,7 +70,7 @@ const Signup = () => {
                         />
                       </div>
                       <div className="form-outline form-white mb-3">
-                        <label className="form-label" htmlFor="password">Password</label>
+                        <label className="form-label text-start w-100 ps-2" htmlFor="password">Password</label>
                         <input
                           type="password"
                           id="password"
@@ -81,7 +81,7 @@ const Signup = () => {
                         />
                       </div>
                       <button 
-                        className="btn btn-outline-light btn-lg px-4 py-2 w-100" 
+                        className="btn btn-outline-light btn-lg px-4 py-2 w-50" 
                         type="submit"
                         id="#signupbtn"
                       >
@@ -89,7 +89,7 @@ const Signup = () => {
                       </button>
                     </div>
                   </form>
-                  <div className="mt-3">
+                  <div className="mt-3 pb-5 ">
                     <h5>If already created account? <Link to="/login" className="text-white-50 fw-bold"> Login</Link></h5>
                   </div>
                 </div>
