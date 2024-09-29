@@ -89,19 +89,19 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-solid fa-map"></i>
-              <Link className="link" to="/">Map</Link>
+              <Link className="link" to="/Map">Map</Link>
             </li>
             <li>
               <i className="fa-regular fa-heart"></i>
-              <Link className="link" to={!localStorage.getItem('token')?"/login":"/"}>Wishlist</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/Wishlist"}>Wishlist</Link>
             </li>
             <li>
               <i className="fa-solid fa-door-open"></i>
-              <Link className="link" to={!localStorage.getItem('token')?"/login":"/"}>My Rooms</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/Rooms"}>My Rooms</Link>
             </li>
             <li>
               <i className="fa-solid fa-sack-dollar"></i>
-              <Link className="link" to={!localStorage.getItem("token") ? "/Navdetails" : "/login"}>Details</Link>
+              <Link className="link" to={!localStorage.getItem("token") ? "/login": "/Navdetails"}>Details</Link>
             </li>
             <hr style={{ border: "1px solid grey" }} />
             <li>
@@ -119,11 +119,11 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-solid fa-clock-rotate-left"></i>
-              <Link className="link" to="/">History</Link>
+              <Link className="link" to="/History">History</Link>
             </li>
             <li>
               <i className="fa-solid fa-gear"></i>
-              <Link className="link" to="/">Setting</Link>
+              <Link className="link" to="/Setting">Setting</Link>
             </li>
             <li>
               <i className="fa-solid fa-circle-question"></i>
