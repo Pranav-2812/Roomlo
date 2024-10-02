@@ -101,11 +101,7 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-solid fa-sack-dollar"></i>
-<<<<<<< HEAD
-              <Link className="link" to={!localStorage.getItem("token") ? "/login": "/Navdetails"}>Details</Link>
-=======
               <Link className="link" to={!localStorage.getItem("token") ? "/login":"/Navdetails"}>Details</Link>
->>>>>>> 56b75753b9a8aa0d4279cc058af27fc8e2a483dd
             </li>
             <hr style={{ border: "1px solid grey" }} />
             <li>
