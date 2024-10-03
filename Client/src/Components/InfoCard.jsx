@@ -8,7 +8,7 @@ const InfoCard = () => {
         naviagate('/details')
     }
     return (
-        <div className='card-main' onClick={handleCLick}>
+        <div className='card-main' >
             <div id="carouselExampleIndicators" className="carousel slide" style={{ zIndex: "0" }}>
                 <div className="carousel-indicators" >
 
@@ -36,7 +36,7 @@ const InfoCard = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-            <div className="card-content">
+            <div className="card-content" onClick={handleCLick}>
                 <span>
                     <h3>RS.1200/month</h3>
                     <div className="icon-btns-secondary">
