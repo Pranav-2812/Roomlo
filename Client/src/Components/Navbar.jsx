@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../Styles/Navbar.css";
 import logo from "../assets/Logo.png";
 import whatsappLogo from "../assets/Whatsapp.png";
 import MoneyLogo from "../assets/Money.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { signOut } from "firebase/auth";
 import { auth } from "../context/firebase";
@@ -34,8 +34,6 @@ const Navbar = () => {
       closeSideBar();
     }
   };
-  const navigate = useNavigate();
-
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -49,11 +47,7 @@ const Navbar = () => {
         console.log(error.meessage);
       });
   };
-  useEffect(()=>{
-    if(!localStorage.getItem('token')){
-      navigate('/login')
-    }
-  },[])
+
   return (
     <>
       <div className="navbar_main">
@@ -89,15 +83,15 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-solid fa-map"></i>
-              <Link className="link" to="/">Map</Link>
+              <Link className="link" to="/Map">Map</Link>
             </li>
             <li>
               <i className="fa-regular fa-heart"></i>
-              <Link className="link" to={!localStorage.getItem('token')?"/login":"/"}>Wishlist</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/Wishlist"}>Wishlist</Link>
             </li>
             <li>
               <i className="fa-solid fa-door-open"></i>
-              <Link className="link" to={!localStorage.getItem('token')?"/login":"/"}>My Rooms</Link>
+              <Link className="link" to={!localStorage.getItem('token')?"/login":"/Rooms"}>My Rooms</Link>
             </li>
             <li>
               <i className="fa-solid fa-sack-dollar"></i>
@@ -119,11 +113,11 @@ const Navbar = () => {
             </li>
             <li>
               <i className="fa-solid fa-clock-rotate-left"></i>
-              <Link className="link" to="/">History</Link>
+              <Link className="link" to="/History">History</Link>
             </li>
             <li>
               <i className="fa-solid fa-gear"></i>
-              <Link className="link" to="/">Setting</Link>
+              <Link className="link" to="/Setting">Setting</Link>
             </li>
             <li>
               <i className="fa-solid fa-circle-question"></i>

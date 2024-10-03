@@ -3,7 +3,7 @@ import "../Styles/Footer.css"
 export default function Footer() {
     return (
         <div style={{background:"#212121"}}>
-            <div className="container footer-content ">
+            <div className="container footer-content px-2 ">
                 <div className='py-5'>
                     <h1 className='text-light'>India's #1</h1>
                     <h1 className='text-light'>Shelter Company</h1>

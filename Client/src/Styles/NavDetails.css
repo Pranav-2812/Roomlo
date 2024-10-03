@@ -1,0 +1,68 @@
+/* Styling for larger screens (default) */
+.container {
+   max-width: 1200px;
+ }
+ 
+ .card-custom {
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .card-body {
+   padding: 20px;
+ }
+ 
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+   .container {
+     padding: 10px;
+   }
+ 
+   .card {
+     width: 100%;
+     margin: 0 auto;
+   }
+ 
+   .card-body {
+     padding: 15px;
+   }
+ 
+   h2 {
+     font-size: 3rem;
+   }
+ 
+   h4.card-title, h4.card-subtitle {
+     font-size: 2rem;
+   }
+ 
+   ul {
+     font-size: 1rem;
+     padding-left: 10px;
+   }
+ 
+   ul li {
+     margin-bottom: 10px;
+   }
+ }
+ 
+ @media (max-width: 576px) {
+   .container {
+     padding: 5px;
+   }
+ 
+   h2 {
+     font-size: 3rem;
+   }
+ 
+   h4.card-title, h4.card-subtitle {
+     font-size: 1.5rem;
+   }
+ 
+   ul {
+     font-size: 1rem;
+   }
+ 
+   ul li {
+     margin-bottom: 8px;
+   }
+ }
+ 

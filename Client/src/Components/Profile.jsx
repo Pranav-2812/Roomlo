@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../Styles/Login.css";
+
 import { db, storage } from "../context/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
@@ -316,4 +316,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile;  
