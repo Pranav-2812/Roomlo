@@ -1,22 +1,131 @@
 *{
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 body{
-    overflow: hidden;
+  overflow: hidden;
 }
 .home{
-    background-image: url("../assets/image_buuilding.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    z-index: 4;
-    margin-top: -5%;
-    object-fit: contain;
-    height: 101vh;
+  background-image: url("../assets/image_buuilding.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  z-index: 4;
+  margin-top: -5%;
+  object-fit: contain;
+  height: 101vh;
 }
 .bg-image{
-    height: 100%;
-    backdrop-filter: blur(3px);
+  height: 100%;
+  backdrop-filter: blur(3px);
+}
+
+@media (max-width: 768px) {
+  /* Navbar adjustments */
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
+
+  .navbar-brand img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar .btn {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Center section adjustments */
+  .container {
+    max-width: 90%;
+  }
+
+  .container h1 {
+    font-size: 2.5rem;
+  }
+
+  .container .bg-dark {
+    padding: 1.5rem;
+  }
+
+  .container .bg-dark h3 {
+    font-size: 1.25rem;
+  }
+
+  .container .bg-dark .p-3 {
+    font-size: 1rem;
+  }
+
+  .container .bg-dark h5 {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* More compact layout for mobile phones */
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-brand img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar .btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .container .bg-dark {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .container .bg-dark h3 {
+    font-size: 1rem;
+  }
+
+  .container .bg-dark .p-3 {
+    font-size: 0.875rem;
+  }
+
+  .container .bg-dark h5 {
+    font-size: 0.75rem;
+  }
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-light {
+  color: #ffffff !important;
+}
+
+.text-dark {
+  color: #000000 !important;
+}
+
+.bg-dark {
+  background-color: #333 !important;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
 }
