@@ -14,7 +14,7 @@ const Details = () => {
               <div className="w-75">
                 <img src={Room} className="h-75 w-100 rounded-3" alt="..." />
               </div>
-              <div className="card w-25" >
+              <div className="card card-details w-25" >
                 <div className="card-body">
                   <ul>
                     <li>

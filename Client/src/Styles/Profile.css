@@ -2,8 +2,7 @@
 /* For mobile view */
 @media only screen and (max-width: 768px) {
   .container {
-    width: 95%;
-    padding: 10px;
+    width: 100%;
   }
 
   .card-body {
