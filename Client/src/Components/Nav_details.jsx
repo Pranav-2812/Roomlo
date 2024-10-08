@@ -5,9 +5,9 @@ const Nav_details = () => {
   return (
     <>
       <div className="container  p-3">
-        <h2 className="text-center my-4 py-2">Details</h2>
-        <div className="card w-full sm:w-4/5 md:w-3/4 lg:w-2/3 mx-auto card-custom">
-          <div className="card-body rounded  p-4" style={{ backgroundColor: "#fffdd0" }}>
+        <h2 className="text-center my-4 ">Details</h2>
+        <div className=" card-custom rounded-5 mb-5 ">
+          <div className="card-body  rounded-5 p-4" style={{ backgroundColor: "#fffdd0" }}>
             <h4 className="card-title text-center fw-bold text-base sm:text-lg md:text-xl">1000+</h4>
             <h4 className="card-subtitle text-center pb-2 fw-bold text-base sm:text-lg md:text-xl">Tenants/Want Room</h4>
 

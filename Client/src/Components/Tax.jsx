@@ -3,7 +3,7 @@ import React from 'react'
 const Tax = () => {
   return (
       <>
-      <div className="container text-center my-4 py-3">
+      <div className="container text-center my-4">
          <h2>Tax</h2>
          <h3>Tax on Income from House Property</h3>
          <div className="row py-4 px-4">

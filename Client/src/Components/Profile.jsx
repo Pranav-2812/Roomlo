@@ -40,7 +40,7 @@ const Profile = () => {
         const data = docSnap.data();
         setUserData(data);
         setEditData(data);
-        setImageUrl(data.profileImage || "");
+        setImageUrl(data.profileImageUrl || "");
       } else {
         console.log("No such document!");
       }
@@ -89,7 +89,7 @@ const Profile = () => {
         try {
           const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
           setImageUrl(downloadURL);
-          setEditData({ ...editData, profileImage: downloadURL });
+          setEditData({ ...editData, profileImageUrl: downloadURL });
         } catch (error) {
           console.error("Error getting download URL: ", error.message);
           setError("Failed to get image URL.");
@@ -101,7 +101,7 @@ const Profile = () => {
   };
 
   const saveProfileData = async () => {
-    if (!editData.fullName || !editData.email || !editData.phone) {
+    if (!editData.fullName || !editData.email || !editData.mobilenumber) {
       setError("Please fill in all required fields.");
       return;
     }
@@ -113,7 +113,7 @@ const Profile = () => {
       const userDoc = doc(db, "Users", auth.currentUser.uid);
       await updateDoc(userDoc, editData);
       setUserData(editData);
-      setImageUrl(editData.profileImage || "");
+      setImageUrl(editData.profileImageUrl || "");
     } catch (error) {
       console.error("Error updating document: ", error.message);
       setError("Failed to save changes.");
@@ -128,16 +128,17 @@ const Profile = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div class="spinner-border text-danger position-absolute top-50 start-50 translate-middle" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
   }
 
   return (
     <div
-      className="container mt-5 p-3 rounded shadow-sm p-3 mb-5 " 
+      className="container mt-5 rounded shadow-sm p-3 mb-5 " 
       style={{
         backgroundColor: "#EFFAF9",
-        width: "100%",
-        maxWidth: "65%",
+        width: "100%"
       }}
     >
       <div className="d-flex justify-content-between align-items-center">
@@ -237,7 +238,7 @@ const Profile = () => {
                 border: "none",
                 background: isEditing ? "#f0f0f0" : "transparent",
               }}
-              value={editData.phone || ""}
+              value={editData.mobilenumber || ""}
               onChange={handleInputChange}
             />
           </div>

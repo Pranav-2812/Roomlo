@@ -30,9 +30,9 @@ const Login = () => {
         <div className="row d-flex justify-content-center align-items-center">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div className="card bg-dark text-white">
-              <div className="card-body p-4 text-center">
-                <form>
-                  <div className="mb-md-5 mt-md-4 pb-2">
+              <div className="card-body text-center">
+                <form className="pb-3">
+                  <div className="mb-md-2 mt-md-4 pb-2">
                     <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
 
                     <div
@@ -76,7 +76,7 @@ const Login = () => {
                     <button
                       data-mdb-button-init
                       data-mdb-ripple-init
-                      className="btn btn-outline-light btn-lg px-5"
+                      className="btn btn-outline-light btn-lg px-5 mt-4"
                       id="Loginbtn"
                       type="submit"
                       onClick={onLogin}
@@ -86,14 +86,14 @@ const Login = () => {
                     </button>
                   </div>
                 </form>
-                <div className="mt-3">
-                  <h5>
+                
+                  <h5 className="signup-text">
                     Don't have an account? &ensp;{" "}
                     <Link to="/signup" className="text-white-50 fw-bold">
                       Sign Up
                     </Link>
                   </h5>
-                </div>
+                
               </div>
             </div>
           </div>

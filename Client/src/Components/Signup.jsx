@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection, doc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../context/firebase";
 
 const Signup = () => {
@@ -18,15 +18,13 @@ const Signup = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Save additional user information in Firestore
-      await setDoc(doc(db, "Users", user.email), {
+      // Save additional user information in Firestore using user.uid
+      await setDoc(doc(db, "Users", user.uid), {  // Use user.uid for better data management
         name: "",
-        phone: phone,
+        mobilenumber:phone,
         email: email,
         fullName: "",  // You can add more fields as needed
-        address: "",
         password:password
-        // Add any other fields you need
       });
 
       console.log("Document written with ID: ", user.uid);
@@ -56,6 +54,7 @@ const Signup = () => {
                           autoComplete="on"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="form-outline form-white mb-3">
@@ -67,6 +66,7 @@ const Signup = () => {
                           autoComplete="on"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="form-outline form-white mb-3">
@@ -78,6 +78,7 @@ const Signup = () => {
                           autoComplete="on"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
+                          required
                         />
                       </div>
                       <button 
