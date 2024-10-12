@@ -1,24 +1,22 @@
 @media screen and (max-width: 600px) {
-   #Loginbtn {
-      width: 100%;
-      height: 100%;
-   }
-   .Loginbtn{
-      padding-top: 80px;
-   }
-      .card {
-         height: 500px;
-         padding: 0;
-         border-bottom-left-radius: 0;
-         border-bottom-right-radius: 0;
-         box-shadow: rgba(0, 0, 0, 0.16) 6px 3px 6px, rgba(0, 0, 0, 0.23) 5px 3px 6px;
-     }
+  #Loginbtn {
+    width: 100%;
+    height: 100%;
+  }
+  .Loginbtn {
+    padding-top: 80px;
+  }
+  .card {
+    height: 500px;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 6px 3px 6px, rgba(0, 0, 0, 0.23) 5px 3px 6px;
+  }
 }
 
-@media (max-width:430px) {
-   .signup-text{
-      height: 15px;
-      
-
-   }
+@media (max-width: 430px) {
+  .signup-text {
+    height: 15px;
+  }
 }
