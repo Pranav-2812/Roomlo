@@ -11,6 +11,8 @@ import Tax from "./Components/Tax";
 import HelpandSupp from "./Components/HelpandSupp";
 import Home from "./Components/Home";
 import { useEffect } from "react";
+import Ownerhome from "./Components/Ownerhome";
+import Userhome from "./Components/Userhome";
 function App() {
   const navigate = useNavigate();
   useEffect(()=>{
@@ -27,6 +29,8 @@ function App() {
       <Routes>
         {/* Default route set to Home component */}
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/owner" element={<Ownerhome />} />
+        <Route exact path="/user" element={<Userhome />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/details" element={<Details />} />

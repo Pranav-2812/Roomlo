@@ -72,7 +72,7 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
-
+                  
                     <button
                       data-mdb-button-init
                       data-mdb-ripple-init
@@ -86,14 +86,14 @@ const Login = () => {
                     </button>
                   </div>
                 </form>
-                
+                <div className="Loginbtn">
                   <h5 className="signup-text">
                     Don't have an account? &ensp;{" "}
                     <Link to="/signup" className="text-white-50 fw-bold">
                       Sign Up
                     </Link>
                   </h5>
-                
+                  </div>
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../context/firebase";
 
+
 const Signup = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -90,7 +91,7 @@ const Signup = () => {
                       </button>
                     </div>
                   </form>
-                  <div className="mt-3 pb-5 ">
+                  <div className="mt-3 pb-5" id="signbtn">
                     <h5>If already created account? <Link to="/login" className="text-white-50 fw-bold"> Login</Link></h5>
                   </div>
                 </div>
