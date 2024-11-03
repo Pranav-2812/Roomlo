@@ -521,7 +521,9 @@
       width: 800px !important;
       justify-content: space-between;
    }
-
+   #property-activity>div>div:nth-child(2){
+      margin-left: 5%;
+   }
    .property-activity-info>* {
       scale: 1;
    }
