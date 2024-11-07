@@ -217,9 +217,12 @@
         width:50vw;
     }
 }
-@media (max-width:400px){
+@media (max-width:410px){
     .side_bar_contents{
         width:55vw;
+    }
+    .list{
+        gap: 1%;
     }
 }
 @media (max-width:320px){

@@ -7,16 +7,16 @@ import Footer from "./Footer";
 const Details = () => {
   return (
     <>
-      <div className="col">
+      <div className="col" id="details-page-main">
         <div className="container px-2">
           <div className="col">
             <div className="row mt-5" id="details-img-card">
               <div className="w-75">
-                <img src={Room} className="h-75 w-100 rounded-3" alt="..." />
+                <img src={Room} className=" w-100 rounded-3 img-fluid" alt="..." />
               </div>
               <div className="card card-details w-25" >
                 <div className="card-body">
-                  <ul>
+                  <ul className="w-100">
                     <li>
                       {" "}
                       <h5 className="card-text fs-5 py-1">
@@ -52,13 +52,8 @@ const Details = () => {
                         Get All room of India in only one app.
                       </h5>
                     </li>
-
-                    <h5 className="card-text fs-5">
-                      {" "}
-                      Get All room of India in only one app.
-                    </h5>
                   </ul>
-                  <span className="d-flex flex-row">
+                  <span className="d-flex flex-row w-100">
                     <p href="#" className="card-link fs-5 w-50 ms-2" id="linkc">
                       1000+ tenants/buyers
                     </p>
@@ -73,9 +68,9 @@ const Details = () => {
               </div>
             </div>
             <div className="row " >
-              <img src={Room} className="next-img" alt="..." />
-              <img src={Room} className="next-img" alt="..." />
-              <img src={Room} className="next-img" alt="..." />
+              <img src={Room} className="next-img img-fluid" alt="..." />
+              <img src={Room} className="next-img img-fluid" alt="..." />
+              <img src={Room} className="next-img img-fluid" alt="..." />
             </div>
           </div>
           <hr />
@@ -85,7 +80,7 @@ const Details = () => {
           </div>
         </div>
         <div className="container my-3">
-          <div className="row">
+          <div className="row details-page-detailInfo">
             <div className="w-75">
               <h2>Rs.1200/month</h2>
               <span className="d-flex flex-row align-items-center ">
@@ -121,83 +116,83 @@ const Details = () => {
           </div>
           <div className="my-4" id="about">
             <h2>About</h2>
-            <div className="w-75 bg-info bg-opacity-25 rounded-5 my-4">
-              <div className="d-flex flex-row w-100 px-4 py-2">
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  even">
+            <div className="w-75 bg-info bg-opacity-25 rounded-5 my-4" id="about-chart">
+              <div className="d-flex  w-100 px-4 py-2 about-chart-rows">
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items">
                   <h4 className="w-50">Area:</h4>
                   &ensp;&ensp;
                   <p className="w-50">250sq.ft    (Medium) </p>
                 </div>
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd">
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items">
                   <h4 className="w-50">Electric Bill:</h4>
                   &ensp;&ensp;
                   <p className="w-50">Include </p>
                 </div>
               </div>
-              <div className="d-flex flex-row w-100 px-4 py-2">
-                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center even">
+              <div className="d-flex  w-100 px-4 py-2 about-chart-rows">
+                <div className="d-flex  mx-2 my-2 w-50  align-items-center about-chart-items">
                   <h4 className="w-50">Wall:</h4>
                   &ensp;&ensp;
                   <p className="w-50">Putting  (White) </p></div>
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd">
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items ">
                   <h4 className="w-50">Non Veg:</h4>
                   &ensp;&ensp;
                   <p className="w-50">Yes allow </p>
                 </div>
               </div>
-              <div className="d-flex flex-row w-100 px-4 py-2">
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  even">
+              <div className="d-flex  w-100 px-4 py-2 about-chart-rows">
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items">
                   <h4 className="w-50">Floor:</h4>
                   &ensp;&ensp;
                   <p className="w-50">1-3 Floor </p>
                 </div>
-                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center odd">
+                <div className="d-flex  mx-2 my-2 w-50  align-items-center about-chart-items">
                   <h4 className="w-50">Wifi:</h4>
                   &ensp;&ensp;
                   <p className="w-50">Yes </p>
                 </div>
               </div>
-              <div className="d-flex flex-row w-100 px-4 py-2">
-                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center even">
+              <div className="d-flex  w-100 px-4 py-2 about-chart-rows">
+                <div className="d-flex  mx-2 my-2 w-50  align-items-center about-chart-items">
                   <h4 className="w-50">Tiles:</h4>
                   &ensp;&ensp;
                   <p className="w-50">Yes </p>
                 </div>
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd">
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items">
                   <h4 className="w-50">Aminities:</h4>
                   &ensp;&ensp;
                   <p className="w-50">Bed,Fan,Almari, Light</p>
                 </div>
               </div>
-              <div className="d-flex flex-row w-100 px-4 py-2">
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center even ">
+              <div className="d-flex  w-100 px-4 py-2 about-chart-rows">
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items">
                   <h4 className="w-50">Parking:</h4>
                   &ensp;&ensp;
                   <p className="w-50">2 wheller,4 wheeler </p>
                 </div>
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  odd"></div>
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items "></div>
               </div>
-              <div className="d-flex flex-row w-100 px-4 py-2">
-                <div className="d-flex flex-row mx-2 my-2 w-50 align-items-center  even">
+              <div className="d-flex  w-100 px-4 py-2 about-chart-rows">
+                <div className="d-flex  mx-2 my-2 w-50 align-items-center about-chart-items">
                   <h4 className="w-50">Bathroom:</h4>
                   &ensp;&ensp;
                   <p className="w-50">2</p>
                 </div>
-                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center odd"></div>
+                <div className="d-flex  mx-2 my-2 w-50  align-items-center about-chart-items"></div>
               </div>
-              <div className="d-flex flex-row w-100 px-4 py-2">
-                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center even">
+              <div className="d-flex  w-100 px-4 py-2 about-chart-rows">
+                <div className="d-flex  mx-2 my-2 w-50  align-items-center about-chart-items">
                   <h4 className="w-50">Toilet:</h4>
                   &ensp;&ensp;
                   <p className="w-50">2 </p>
                 </div>
-                <div className="d-flex flex-row mx-2 my-2 w-50  align-items-center odd"></div>
+                <div className="d-flex  mx-2 my-2 w-50  align-items-center about-chart-items"></div>
               </div>
             </div>
             <h3 className="link link-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ cursor: "pointer" }}>View more details -&gt;</h3>
 
             {/* Modal  starts*/}
-            <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade about-modal" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -205,83 +200,83 @@ const Details = () => {
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div className="modal-body">
-                    <div className="modal-details">
+                    <div className="modal-details about-modal-details">
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Rent</p>
-                        <p className="w-50 text-dark">Rs. 1200/month</p>
+                        <p className="w-25 text-secondary">Rent</p>
+                        <p className="w-75 text-dark">Rs. 1200/month</p>
                       </div>
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Deposit</p>
-                        <p className="w-50 text-dark">andkasdka</p>
+                        <p className="w-25 text-secondary">Deposit</p>
+                        <p className="w-75 text-dark">andkasdka</p>
                       </div>
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Address</p>
-                        <p className="w-50 text-dark">sdhakjsdasdmlak,asdknaasakjlsdlna,scadih</p>
+                        <p className="w-25 text-secondary">Address</p>
+                        <p className="w-75 text-dark">sdhakjsdasdmlak,asdknaasakjlsdlna,scadih</p>
                       </div>
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Room Type</p>
-                        <p className="w-50 text-dark">sdasjda  kshdk</p>
+                        <p className="w-25 text-secondary">Room Type</p>
+                        <p className="w-75 text-dark">sdasjda  kshdk</p>
                       </div>
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">For</p>
-                        <p className="w-50 text-dark">sdkkasdkjaks</p>
-                      </div>
-                    </div>
-                    <hr className="active"></hr>
-                    <div className="modal-details">
-                      <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Area</p>
-                        <p className="w-50 text-dark"></p>
-                      </div>
-                      <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Tiles</p>
-                        <p className="w-50 text-dark"></p>
-                      </div>
-                      <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Wall</p>
-                        <p className="w-50 text-dark"></p>
-                      </div>
-                      <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Floor</p>
-                        <p className="w-50 text-dark"></p>
+                        <p className="w-25 text-secondary">For</p>
+                        <p className="w-75 text-dark">sdkkasdkjaks</p>
                       </div>
                     </div>
                     <hr className="active"></hr>
                     <div className="modal-details">
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Electric Bill</p>
-                        <p className="w-50 text-dark"></p>
+                        <p className="w-25 text-secondary">Area</p>
+                        <p className="w-75 text-dark"></p>
                       </div>
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Parking</p>
-                        <p className="w-50 text-dark"></p>
+                        <p className="w-25 text-secondary">Tiles</p>
+                        <p className="w-75 text-dark"></p>
                       </div>
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Non Veg</p>
-                        <p className="w-50 text-dark"></p>
+                        <p className="w-25 text-secondary">Wall</p>
+                        <p className="w-75 text-dark"></p>
                       </div>
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Bathroom</p>
-                        <p className="w-50 text-dark"></p>
-                      </div>
-                      <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Toilet</p>
-                        <p className="w-50 text-dark"></p>
-                      </div>
-                      <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Balcony</p>
-                        <p className="w-50 text-dark"></p>
-                      </div>
-                      <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Power cut</p>
-                        <p className="w-50 text-dark"></p>
+                        <p className="w-25 text-secondary">Floor</p>
+                        <p className="w-75 text-dark"></p>
                       </div>
                     </div>
                     <hr className="active"></hr>
                     <div className="modal-details">
                       <div className="row w-75 py-1">
-                        <p className="w-50 text-secondary">Amenities</p>
-                        <p className="w-50 text-dark"></p>
+                        <p className="w-25 text-secondary">Electric Bill</p>
+                        <p className="w-75 text-dark"></p>
+                      </div>
+                      <div className="row w-75 py-1">
+                        <p className="w-25 text-secondary">Parking</p>
+                        <p className="w-75 text-dark"></p>
+                      </div>
+                      <div className="row w-75 py-1">
+                        <p className="w-25 text-secondary">Non Veg</p>
+                        <p className="w-75 text-dark"></p>
+                      </div>
+                      <div className="row w-75 py-1">
+                        <p className="w-25 text-secondary">Bathroom</p>
+                        <p className="w-75 text-dark"></p>
+                      </div>
+                      <div className="row w-75 py-1">
+                        <p className="w-25 text-secondary">Toilet</p>
+                        <p className="w-75 text-dark"></p>
+                      </div>
+                      <div className="row w-75 py-1">
+                        <p className="w-25 text-secondary">Balcony</p>
+                        <p className="w-75 text-dark"></p>
+                      </div>
+                      <div className="row w-75 py-1">
+                        <p className="w-25 text-secondary">Power cut</p>
+                        <p className="w-75 text-dark"></p>
+                      </div>
+                    </div>
+                    <hr className="active"></hr>
+                    <div className="modal-details">
+                      <div className="row w-75 py-1">
+                        <p className="w-25 text-secondary">Amenities</p>
+                        <p className="w-75 text-dark"></p>
                       </div>
                     </div>
                   </div>
@@ -299,10 +294,10 @@ const Details = () => {
             <h5 className="text-secondary">Landmark: Behind Bangali Mandir.</h5>
             <h4 className="text-muted">Nearby from this property (section under development...)</h4>
           </div>
-          <hr className="active" style={{ border: "10px solid grey" }}></hr>
+          <hr className="active " style={{ border: "10px solid grey" }}></hr>
           <div className="my-4 row" id="contacts-properties">
             <div className="w-50">
-              <div className="card rounded-3" id="property-acivity">
+              <div className="card rounded-3" id="property-activity">
                 <div className="card-body">
                   <div className="row align-items-center px-3">
                     <h4 className="w-75">Activity On This Property</h4>
@@ -311,7 +306,7 @@ const Details = () => {
                       <p>Hurry Up!</p>
                     </div>
                   </div>
-                  <div className="d-flex flex-row justify-content-between my-4">
+                  <div className="d-flex flex-row justify-content-between my-4 px-2">
                     <div className="d-flex flex-column  align-items-center property-activity-info px-4">
                       <h5>25 views</h5>
                       <i className="fa-regular fa-eye"></i>
@@ -328,6 +323,7 @@ const Details = () => {
                 </div>
               </div>
             </div>
+            <hr className="active activity-line" style={{ border: "10px solid grey" }}></hr>
             <div className="w-50">
               <div className="card rounded-3" id="property-contact">
                 <div className="card-body " >

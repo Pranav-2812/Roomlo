@@ -2,9 +2,9 @@
   padding: 0;
   margin: 0;
 }
-body {
+/* body {
   overflow: hidden;
-}
+} */
 .home {
   background-image: url("../assets/image_buuilding.jpg");
   background-size: cover;

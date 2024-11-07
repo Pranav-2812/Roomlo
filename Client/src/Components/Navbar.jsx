@@ -18,7 +18,7 @@ const Navbar = () => {
       document
         .querySelector(".side_bar_btn")
         .classList.toggle("side_bar_btn_after");
-      document.querySelector("body").style.overflow = "hidden";
+      // document.querySelector("body").style.overflow = "hidden";
       setOpen(true);
     } else {
       closeSideBar();
@@ -30,7 +30,7 @@ const Navbar = () => {
     document
       .querySelector(".side_bar_btn")
       .classList.remove("side_bar_btn_after");
-    document.querySelector("body").style.overflow = "auto";
+    document.querySelector("body").style.overflow = "scroll";
     setOpen(false);
   };
 

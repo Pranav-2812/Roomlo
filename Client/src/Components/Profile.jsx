@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { db, storage } from "../context/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
@@ -290,7 +290,7 @@ const Profile = () => {
               <p className="mb-0">Password</p>
             </div>
             <div>
-              <a href="/" className="text-decoration-none text-danger">Change Password</a>
+              <Link to="/profile" className="text-decoration-none text-danger">Change Password</Link>
             </div>
           </div>
         </div>
