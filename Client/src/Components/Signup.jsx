@@ -42,7 +42,7 @@ const Signup = () => {
           <div className="row d-flex justify-content-center align-items-center">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
               <div className="card bg-dark text-white">
-                <div className="card-body p-4 text-center">
+                <div className="card-body p-3 text-center">
                   <form onSubmit={onSubmit}>
                     <div className="mb-4">
                       <h2 className="fw-bold mb-4 text-uppercase">Signup</h2>
@@ -91,8 +91,8 @@ const Signup = () => {
                       </button>
                     </div>
                   </form>
-                  <div className="mt-3 pb-5" id="signbtn">
-                    <h5>If already created account? <Link to="/login" className="text-white-50 fw-bold"> Login</Link></h5>
+                  <div className="mt-2 pb-5 " id="signbtn">
+                    <h5 className="fs-5">If already created account? <Link to="/login" className="text-white-50 fw-bold"> Login</Link></h5>
                   </div>
                 </div>
               </div>

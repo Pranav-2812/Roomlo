@@ -76,7 +76,7 @@ const Login = () => {
                     <button
                       data-mdb-button-init
                       data-mdb-ripple-init
-                      className="btn btn-outline-light btn-lg px-5 mt-4"
+                      className="btn btn-outline-light btn-lg px-5 pt-2"
                       id="Loginbtn"
                       type="submit"
                       onClick={onLogin}
@@ -87,7 +87,7 @@ const Login = () => {
                   </div>
                 </form>
                 <div className="Loginbtn">
-                  <h5 className="signup-text">
+                  <h5 className="signup-text fs-5">
                     Don't have an account? &ensp;{" "}
                     <Link to="/signup" className="text-white-50 fw-bold">
                       Sign Up
