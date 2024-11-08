@@ -10,6 +10,7 @@ function Userhome() {
         <div className="bg-image">
           <nav className="navbar navbar-light  bg-transparent py-1">
             <div className="container-fluid p-2 m-4  ">
+            <Link to="/" className="text-decoration-none">
               <h2 className="d-flex align-items-center navbar-brand px-4 fs-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -23,6 +24,7 @@ function Userhome() {
                   <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
                 </svg>
                 <span className="roomlo">
+                
                   <img
                     src={logo}
                     alt="logo"
@@ -30,9 +32,11 @@ function Userhome() {
                     height="50"
                     className="d-inline-block align-text-top pl-3"
                   />
+                 
                   &ensp;RoomLo
                 </span>
               </h2>
+              </Link>
               <div className="d-flex flex-col ">
                 <h5
                   className="d-flex align-items-center justify-content-center"

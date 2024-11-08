@@ -2,9 +2,9 @@
   padding: 0;
   margin: 0;
 }
-body {
+/* body {
   overflow: hidden;
-}
+} */
 .home {
   background-image: url("../assets/image_buuilding.jpg");
   background-size: cover;
@@ -134,7 +134,7 @@ body {
 
   /* Center section adjustments */
   .container {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .container h1 {
@@ -157,7 +157,7 @@ body {
     font-size: 0.875rem;
   }
   #box1 {
-    width: 100%;
+    width: 90%;
     padding: 0%;
   }
 }
@@ -166,7 +166,7 @@ body {
     margin-top: -11.5%;
   }
   #box1 {
-    width: 100%;
+    width: 50%;
     padding: 0%;
   }
   .input-group {

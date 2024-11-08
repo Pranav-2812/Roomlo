@@ -242,9 +242,10 @@
         padding-left:10%;
     }
 }
-@media (max-width:430px) {
+@media (max-width:435px) {
     .card-main{
         border-radius: 0px;
+        gap: 2%;
     }
     .carousel-inner{
         border-radius: 0px;
