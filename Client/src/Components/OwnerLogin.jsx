@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../Styles/Login.css";
+
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "../context/firebase";
 import { auth } from "../context/firebase";
-const Login = () => {
+const OwnerLogin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,11 +13,11 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
-        localStorage.setItem("acc","user")
-        localStorage.setItem("token", user.accessToken);
+        const owner = userCredential.user;
+        localStorage.setItem("token", owner.accessToken);
+        localStorage.setItem("acc","owner")
         navigate("/desktop");
-        console.log(user);
+        console.log(owner);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -90,7 +90,7 @@ const Login = () => {
                 <div className="Loginbtn">
                   <h5 className="signup-text fs-5">
                     Don't have an account? &ensp;{" "}
-                    <Link to="/signup" className="text-white-50 fw-bold">
+                    <Link to="/ownersignup" className="text-white-50 fw-bold">
                       Sign Up
                     </Link>
                   </h5>
@@ -104,4 +104,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default OwnerLogin;

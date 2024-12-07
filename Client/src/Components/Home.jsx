@@ -63,7 +63,7 @@ const Home = () => {
                   {/* Owner button */}
                   <div className="col pb-4 px-5 w-100">
                     <div className="p-2 py-2 border bg-light text-center rounded-pill">
-                      <Link className="link" to="/owner">
+                      <Link className="link" to="/ownerlogin">
                         <h4 className="text-center text-dark fw-bold">Owner</h4>
                         <h5 className="text-center px-4 m-2 fst-italic fw-lighter text-dark">
                           (Rent Room)

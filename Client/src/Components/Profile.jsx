@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { db, storage } from "../context/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
@@ -9,33 +8,23 @@ import pro from "../assets/profile.png";
 
 const Profile = () => {
   const [userData, setUserData] = useState({});
+  const [editData, setEditData] = useState({});
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
-  const [editData, setEditData] = useState({});
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
   const [uploading, setUploading] = useState(false);
-  const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const auth = getAuth();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        fetchUserData(user.uid);
-      } else {
-        navigate("/login");
-      }
-    });
-
-    return () => unsubscribe();
-  }, [auth, navigate]);
-
-  const fetchUserData = async (uid) => {
+  // Function to fetch user/owner data
+  const fetchProfileData = async (uid, accountType) => {
     try {
-      const userDoc = doc(db, "Users", uid);
+      const collection = accountType === "user" ? "Users" : "Owners";
+      const userDoc = doc(db, collection, uid);
       const docSnap = await getDoc(userDoc);
+
       if (docSnap.exists()) {
         const data = docSnap.data();
         setUserData(data);
@@ -45,43 +34,56 @@ const Profile = () => {
         console.log("No such document!");
       }
     } catch (error) {
-      console.error("Error fetching document: ", error.message);
+      console.error("Error fetching document:", error.message);
     } finally {
       setLoading(false);
     }
   };
 
- 
-  const toggleEdit = () => {
-    setIsEditing(!isEditing);
-  };
-
-  const handleInputChange = (e) => {
-    setEditData({
-      ...editData,
-      [e.target.name]: e.target.value,
+  // UseEffect for authentication state
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const accountType = localStorage.getItem("acc");
+        fetchProfileData(user.uid, accountType);
+      } else {
+        navigate("/login");
+      }
     });
+    return () => unsubscribe();
+  }, [auth, navigate]);
+
+  // Toggles edit mode
+  const toggleEdit = () => setIsEditing((prev) => !prev);
+
+  // Handles input changes in edit mode
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  // Handles image selection and preview
   const handleImageChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
+    const file = e.target.files?.[0];
+    if (file) {
+      setImage(file);
+      setImageUrl(URL.createObjectURL(file)); // Preview the image
     }
   };
 
+  // Handles image upload
   const handleImageUpload = async () => {
     if (!image) return;
 
     const storageRef = ref(storage, `profilePictures/${auth.currentUser.uid}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
-
     setUploading(true);
 
     uploadTask.on(
       "state_changed",
       null,
       (error) => {
-        console.error("Error uploading image: ", error.message);
+        console.error("Error uploading image:", error.message);
         setUploading(false);
         setError("Failed to upload image.");
       },
@@ -89,9 +91,9 @@ const Profile = () => {
         try {
           const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
           setImageUrl(downloadURL);
-          setEditData({ ...editData, profileImageUrl: downloadURL });
+          setEditData((prevData) => ({ ...prevData, profileImageUrl: downloadURL }));
         } catch (error) {
-          console.error("Error getting download URL: ", error.message);
+          console.error("Error getting download URL:", error.message);
           setError("Failed to get image URL.");
         } finally {
           setUploading(false);
@@ -100,39 +102,32 @@ const Profile = () => {
     );
   };
 
-  const saveProfileData = async () => {
-    if (!editData.fullName || !editData.email || !editData.mobilenumber) {
-      setError("Please fill in all required fields.");
-      return;
-    }
-
-    setSaving(true);
-    setError("");
-
+  // Saves profile data to Firestore
+  const handleSave = async () => {
     try {
-      const userDoc = doc(db, "Users", auth.currentUser.uid);
+      const accountType = localStorage.getItem("acc");
+      const collection = accountType === "user" ? "Users" : "Owners";
+      const userDoc = doc(db, collection, auth.currentUser.uid);
+
       await updateDoc(userDoc, editData);
       setUserData(editData);
-      setImageUrl(editData.profileImageUrl || "");
+      setIsEditing(false);
     } catch (error) {
-      console.error("Error updating document: ", error.message);
+      console.error("Error saving document:", error.message);
       setError("Failed to save changes.");
-    } finally {
-      setSaving(false);
     }
   };
 
-  const handleSave = async () => {
-    await saveProfileData();
-    setIsEditing(false);
-  };
-
+  // Loader
   if (loading) {
-    return <div class="spinner-border text-danger position-absolute top-50 start-50 translate-middle" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
+    return (
+      <div className="spinner-border text-danger position-absolute top-50 start-50 translate-middle" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    );
   }
 
+  // Render Component
   return (
     <div
       className="container mt-5 rounded shadow-sm p-3 mb-5 " 
@@ -317,4 +312,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;  
+export default Profile;

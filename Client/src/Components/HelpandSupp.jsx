@@ -9,8 +9,8 @@ const HelpandSupp = () => {
          </h5>
          <h5 className="px-4">2) If not resolved:</h5>
          <ul className="list-unstyled px-4 ">
-           <li>Chat on WhatsApp: 132687459 <i class="fa-brands fa-whatsapp fa-xl" style={{color: "#27aa36"}}></i></li>
-           <li>Call Phone number: 123456789 <i class="fa-solid fa-phone fa-lg" style={{color: "#0d5be3"}}></i></li>
+           <li>Chat on WhatsApp: <span className='text-primary'>132687459</span> <i class="fa-brands fa-whatsapp fa-xl" style={{color: "#27aa36"}}></i></li>
+           <li>Call Phone number: <span className='text-primary'>123456789</span>  <i class="fa-solid fa-phone fa-lg" style={{color: "#0d5be3"}}></i></li>
          </ul>
       </div>
       </>

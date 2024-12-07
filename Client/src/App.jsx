@@ -13,6 +13,11 @@ import Home from "./Components/Home";
 import { useEffect } from "react";
 import Ownerhome from "./Components/Ownerhome";
 import Userhome from "./Components/Userhome";
+import OwnerLogin from "./Components/OwnerLogin";
+import OwnerSignup from "./Components/OwnerSignup";
+import { ListProperty } from "./Components/ListProperty";
+import MyProperty from "./Components/MyProperty";
+import AddRoom from "./Components/AddRoom";
 function App() {
   const navigate = useNavigate();
   useEffect(()=>{
@@ -29,10 +34,15 @@ function App() {
       <Routes>
         {/* Default route set to Home component */}
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/ownersignup" element={<OwnerSignup />} />
+        <Route exact path="/ownerlogin" element={<OwnerLogin />} />
         <Route exact path="/owner" element={<Ownerhome />} />
         <Route exact path="/user" element={<Userhome />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/listproperty" element={<ListProperty />} />
+        <Route exact path="/myproperty" element={<MyProperty />} />
+        <Route exact path="/addroom" element={<AddRoom />} />
         <Route exact path="/details" element={<Details />} />
         <Route exact path="/desktop" element={<Desktop />} />
         <Route exact path="/Navdetails" element={<Nav_details />} />

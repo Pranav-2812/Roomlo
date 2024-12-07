@@ -57,6 +57,93 @@ const Navbar = () => {
 
   return (
     <>
+    {localStorage.getItem("acc") === "owner" ? <> <div className="navbar_main">
+        <div className="first_half">
+          <span className="side_bar_btn" onClick={openSideBar}>
+            <hr className="hr" />
+            <hr className="hr" />
+            <hr className="hr" />
+          </span>
+          <span className="logo_name">
+            <img src={logo} alt="Roomlo logo" />
+            <h2>Roomlo</h2>
+          </span>
+        </div>
+        <div className="second_half">
+          <span className="icons">
+            <img src={whatsappLogo} alt="WhatsApp logo" />
+            <p>Whatsapp</p>
+          </span>
+          <span className="icons">
+            <i className="fa-regular fa-user"></i>
+            <p>
+  {!isLoggedIn ? (
+    <Link className="link" to="/signup">
+      Signup
+    </Link>
+  ) : (
+    localStorage.getItem("acc") === "user" ? "User" : "Owner"
+  )}
+</p>
+
+          </span>
+        </div>
+      </div>
+      <div className="side_bar">
+        <div className="side_bar_contents">
+          <ul className="list">
+            <li>
+              <i className="fa-regular fa-user"></i>
+              <Link className="link" to={!isLoggedIn ? "/login" : "/profile"}>
+              Profile
+              </Link>
+            </li>
+            <li>
+              <i className="fa-solid fa-map"></i>
+              <Link className="link" to="/listproperty">
+                List Property
+              </Link>
+            </li>
+            <li>
+              <i className="fa-regular fa-heart"></i>
+              <Link className="link" to={!isLoggedIn ? "/login" : "/myproperty"}>
+                My Property
+              </Link>
+            </li>
+            <li>
+              <i className="fa-solid fa-sack-dollar"></i>
+              <Link className="link" to={!isLoggedIn ? "/login" : "/Rooms"}>
+                Details
+              </Link>
+            </li>
+            <hr style={{ border: "1px solid grey" }} />
+            <li>
+              <img src={MoneyLogo} alt="Money logo" />
+              <Link className="link" to="/Tax">
+                Tax
+              </Link>
+            </li>
+            <li>
+              <i className="fa-solid fa-gear"></i>
+              <Link className="link" to="/Setting">
+                Setting
+              </Link>
+            </li>
+            <li>
+              <i className="fa-solid fa-circle-question"></i>
+              <Link className="link" to="/Help">
+                Help and Support
+              </Link>
+            </li>
+            <li onClick={handleLogout}>
+              <i className="fa-solid fa-right-from-bracket"></i>
+              <span className="link">Logout</span>{" "}
+              {/* No need to navigate to a logout route */}
+            </li>
+          </ul>
+        </div>
+      </div> </>: 
+      <>
       <div className="navbar_main">
         <div className="first_half">
           <span className="side_bar_btn" onClick={openSideBar}>
@@ -137,7 +224,7 @@ const Navbar = () => {
                 className="link"
                 to={!isLoggedIn ? "/login" : "/Navdetails"}
               >
-                Payments
+                pay
               </Link>
             </li>
             <li>
@@ -171,7 +258,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div></> }
+       
     </>
   );
 };
