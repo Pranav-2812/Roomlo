@@ -47,31 +47,31 @@ if (docSnap.exists()) {
     <div className="container text-center m-4 p-4">
       <button onClick={writeData}>test</button>
       <h2>List Property</h2>
-      <div class="card">
-        <div class="card-body">
+      <div className="card">
+        <div className="card-body">
           <h5 className="text-start">1. Address:</h5>
-          <p class="card-text">
+          <p className="card-text">
             Plot no.9 Manav Nagar, Babupeth, behind Bengali mandir, Chandrapur.
           </p>
           <div className="d-flex justify-content-center align-item-center m-1">
-          <a href="#" class="">
+          <a href="#" className="">
             {" "}
-            <span class="badge rounded-pill shadow text-dark m-2 p-2 px-3">2 Rooms</span>
+            <span className="badge rounded-pill shadow text-dark m-2 p-2 px-3">2 Rooms</span>
           </a>
-          <a href="#" class="">
+          <a href="#" className="">
             {" "}
-            <span class="badge rounded-pill shadow text-dark m-2 p-2 px-3">5 Rooms</span>
+            <span className="badge rounded-pill shadow text-dark m-2 p-2 px-3">5 Rooms</span>
           </a>
-          <Link to="/addroom" class="">
+          <Link to="/addroom" className="">
             {" "}
-            <span class="badge rounded-pill text-bg-danger shadow p-2 px-3 m-2">Add Rooms</span>
+            <span className="badge rounded-pill text-bg-danger shadow p-2 px-3 m-2">Add Rooms</span>
           </Link>
           </div>
         </div>
       </div>
       <hr style={{ border: "1px solid grey" }} />
 
-      <div class="card-body">
+      <div className="card-body">
         <h5 className="text-start">
           2. <Link to="/addroom">
           <span className="btn btn-primary">Add New Address</span></Link>
