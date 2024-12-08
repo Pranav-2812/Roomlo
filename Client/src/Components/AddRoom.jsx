@@ -1,88 +1,142 @@
 import React, { useState } from "react";
 import "../Styles/AddRoom.css";
 import { db } from "../context/firebase";
-import {  doc, getDoc, addDoc, collection } from "firebase/firestore"; 
-
+import { addDoc, collection } from "firebase/firestore";
 
 const AddRoom = () => {
-  const getDocument = async () => {
-    try {
-      // Use 'db' instead of 'Firestore' as the Firestore instance
-      const ref = doc(db, "Properties", "37vuqsJufmSScypLQPUpBFBxYz32", "UserProperties", "Ramji Nivas");
-      const snap = await getDoc(ref);
+  const [formData, setFormData] = useState({
+    city: "",
+    locality: "",
+    landmark: "",
+    housetype: "",
+    roomtype: "",
+    availableFor: "",
+    Restrictions:"",
+    price: "",
+    bathroom: "",
+    toilet: "",
+    wifi: false,
+    tiles: "",
+    wall: "",
+    wallPaint: "",
+    floor: "",
+    area: "",
+    deposit: "",
+    maintenance: "",
+    electricBill: "",
+    parking: "",
+    nonVeg: "",
+    balcony: "",
+    amenities: [],
+    advanceBooking: "",
+    photos: [],
+    video: "",
+  });
 
-      if (snap.exists()) {
-        console.log("Document data:", snap.data());
-      } else {
-        console.log("No such document!");
-      }
-    } catch (error) {
-      console.error("Error fetching document:", error.message);
-    }
+  const [currentSection, setCurrentSection] = useState("address");
 
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
 
-  const writeData = async () => {
-    const result = await addDoc(collection(db, 'cities'), {
-      name: "ngp",
-      pinCode: 1234
-    })
-    console.log("result", result)
-  }
+  const handleArrayChange = (key, value) => {
+    setFormData((prev) => {
+      const currentArray = prev[key];
+      return {
+        ...prev,
+        [key]: currentArray.includes(value)
+          ? currentArray.filter((item) => item !== value)
+          : [...currentArray, value],
+      };
+    });
+  };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await addDoc(collection(db, "Properties", "UsersProperties"), {
+        ...formData,
+        createdAt: new Date(),
+      });
+      console.log("Document written with ID: ", result.id);
+      alert("Room added successfully!");
+    } catch (error) {
+      console.error("Error adding document: ", error.message);
+      alert("Failed to add room. Please try again.");
+    }
+  };
 
-  const writeData1 = async () => {
-    const result = await addDoc(collection(db, 'Properties', ), {
-      name: "ngp",
-      pinCode: 1234
-    })
-    console.log("result", result)
-  }
   return (
     <>
-    <button onClick={writeData}>test</button>
       <h2 className="text-center m-4">Add Room</h2>
       <div className="container shadow">
-        <div class="d-flex flex-nowrap justify-content-center pt-3">
-          <div class="order-3 p-1">
-            <h4 className="text-center px-5">Images</h4>
-          </div>
-          <div class="order-2 p-1">
-            <h4 className="text-center px-5">Details</h4>
-          </div>
-          <div class="order-1 p-1">
+        <div className="d-flex flex-nowrap justify-content-center pt-3">
+          <button
+            className={`order-1 p-1 ${
+              currentSection === "address" ? "active" : ""
+            }`}
+            onClick={() => setCurrentSection("address")}
+          >
             <h4 className="text-center px-5">Address</h4>
-          </div>
+          </button>
+          <button
+            className={`order-2 p-1 ${
+              currentSection === "details" ? "active" : ""
+            }`}
+            onClick={() => setCurrentSection("details")}
+          >
+            <h4 className="text-center px-5">Details</h4>
+          </button>
+          <button
+            className={`order-3 p-1 ${
+              currentSection === "images" ? "active" : ""
+            }`}
+            onClick={() => setCurrentSection("images")}
+          >
+            <h4 className="text-center px-5">Images</h4>
+          </button>
         </div>
         <hr />
-        <div className="container mx-5">
-          <div class="form-group">
-            <input
-              type="email"
-              class="form-control w-50 m-2"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="City "
-              
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="password"
-              class="form-control w-50 m-2"
-              id="exampleInputPassword1"
-              placeholder="Locality"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="password"
-              class="form-control w-50 m-2"
-              id="exampleInputPassword1"
-              placeholder="Landmark / Street"
-            />
-          </div>
-          <hr />
+        <form onSubmit={handleSubmit}>
+          {currentSection === "address" && (
+            <div className="container mx-5">
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="city"
+                  className="form-control w-50 m-2"
+                  placeholder="City"
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="locality"
+                  className="form-control w-50 m-2"
+                  placeholder="Locality"
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="landmark"
+                  className="form-control w-50 m-2"
+                  placeholder="Landmark / Street"
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <hr />
+              <div>
+              <hr />
         </div>
         <div className="text-center">
           <h3>
@@ -109,130 +163,181 @@ const AddRoom = () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <button className="m-3 btn btn-primary rounded" onClick={getDocument}>Save & Continue</button>
-        </div>
-        <hr />
-        <div className="p-5">
-          <h6>
-            House Type : <button className="m-3 rounded p-1">Independent House</button>{" "}
-            <button className="m-3 rounded p-1">Apartment / Flat </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => setCurrentSection("details")}
+                >
+                  Save & Continue
+                </button>
+              </div>
+            </div>
+          )}
+          {currentSection === "details" && (
+            <div className="p-5">
+              <h6>
+                House Type:
+                <button
+                  type="button"
+                  className="m-3 rounded p-1"
+                  onClick={() => setFormData({ ...formData, housetype: "Independent House" })}
+                >
+                  Independent House
+                </button>
+                <button
+                  type="button"
+                  className="m-3 rounded p-1"
+                  onClick={() => setFormData({ ...formData, housetype: "Apartment / Flat" })}
+                >
+                  Apartment / Flat
+                </button>
+              </h6>
+              <h6>
+            Room Type: <button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, roomtype: "Bachelor" })}>Bachelor</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, roomtype: "Family" })}>Family</button>
+            <button className="
+            m-3 rounded  p-1" onClick={() => setFormData({ ...formData, roomtype: "Single Room" })}>Single Room</button> <button className="
+             rounded p-1 mx-2" onClick={() => setFormData({ ...formData, roomtype: "Double Sharing" })}>Double Sharing</button>
+            <button className="
+             rounded p-1 " onClick={() => setFormData({ ...formData, roomtype: "Tripple Sharing" })}>Tripple Sharing</button>
+            <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, roomtype: "1 BHK" })}>1 BHK</button>
           </h6>
           <h6>
-            Room Type: <button className="m-3 rounded p-1">Bachelor</button> <button className="
-            m-3 rounded p-1">Family</button>
+          availableFor <button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, availableFor: "Both" })}>Both</button> <button onClick={() => setFormData({ ...formData, availableFor: "Only For Girls" })}>Only For Girls</button>{" "}
             <button className="
-            m-3 rounded  p-1">Single Room</button> <button className="
-             rounded p-1 mx-2">Double Sharing</button>
-            <button className="
-             rounded p-1 ">Tripple Sharing</button>
-            <button className="
-            m-3 rounded p-1">1 BHK</button>
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, availableFor: "Only For Boys" })}>Only For Boys</button>
           </h6>
           <h6>
-            For<button className="m-3 rounded p-1">Both</button> <button>Only For Girls</button>{" "}
+            Restrictions<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Restrictions: "Couple Friendly" })}>Couple Friendly</button>{" "}
             <button className="
-            m-3 rounded p-1">Only For Boys</button>
-          </h6>
-          <h6>
-            Restrictions<button className="m-3 rounded p-1">Couple Friendly</button>{" "}
-            <button className="
-            m-3 rounded p-1">Girls not allowed</button> <button className="
-            m-3 rounded p-1">Girls allowed</button>
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, Restrictions: "Girls not allowed" })}>Girls not allowed</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, Restrictions: "Girls allowed" })}>Girls allowed</button>
           </h6>
           <hr />
           <h6>
-            Tiles:<button className="m-3 rounded p-1">Yes</button> <button className="
-            m-3 rounded p-1">No</button>
+            Tiles:<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Tiles: "Yes" })}>Yes</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, Tiles: "No" })}>No</button>
           </h6>
           <h6>
-            Wall:<button className="m-3 rounded p-1">Putting</button> <button className="
-            m-3 rounded p-1">Only Paint</button>
+            Wall:<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Wall: "Putting" })}>Putting</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, Wall: "Only Paint" })}>Only Paint</button>
           </h6>
           <h6>
-            Wall Paint: <input type="text" name="" id="" className="m-3 rounded p-1"/>
+            Wall Paint: <input type="text" name="" id="" className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, wallPaint: Text })}/>
           </h6>
           <h6>
             Floor:<button className="
-            m-3 rounded p-1">Ground</button> <input type="text" className="m-3 rounded p-1"/>
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData,Floor: "Ground" })}>Ground</button> <input type="text" className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Floor: Text })}/>
           </h6>
           <h6>
-            Area: <input type="sq.ft" name="" id="" className="m-3 rounded p-1"/>
+            Area: <input type="sq.ft" name="" id="" className="m-3 rounded p-1" onClick={() => setFormData({ ...formData,  Area:Text })}/>
           </h6>
-
           <hr />
-
           <h6>
-            Price: <input type="Rs." name="" id="" className="m-3 rounded"/>{" "}
-            <input type="checkbox" name="" id="" className=" rounded"/>
+            Price: <input type="Rs." name="" id="" className="m-3 rounded" onClick={() => setFormData({ ...formData, Price: Text })}/>{" "}
+            <input type="checkbox" name="" id="" className=" rounded" onClick={() => setFormData({ ...formData, Price:"Rent Negotiable" })}/>
             <h6>Rent Negotiable</h6>
-            <input type="checkbox" name="" id="" /> <h6>Fix Rate</h6>
+            <input type="checkbox" name="" id="" onClick={() => setFormData({ ...formData, Price: "Fix Rate" })}/> <h6>Fix Rate</h6>
           </h6>
           <h6>
-            Deposit:<button className="m-3 rounded p-1">1 Month rent </button>{" "}
-            <button className="mx-3 rounded p-1">2 Month rent </button> <button className="mx-3 rounded p-1">Custom</button>
+            Deposit:<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Deposit:"1 Month rent" })}>1 Month rent </button>{" "}
+            <button className="mx-3 rounded p-1" onClick={() => setFormData({ ...formData, Deposit:"2 Month rent" })}>2 Month rent </button> <button className="mx-3 rounded p-1" onClick={() => setFormData({ ...formData, Deposit:"Custom" })}>Custom</button>
           </h6>
           <h6>
-            Maintenance:<button className="m-3 rounded p-1">Include</button> <button className="
-            m-3 rounded p-1">Custom</button>
+            Maintenance:<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Maintenance:"Include" })}>Include</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, Maintenance:"Custom" })}>Custom</button>
           </h6>
           <hr />
           <h6>
-          Electric Bill:<button className="m-3 rounded p-1">Include</button> <button className="
-            m-3 rounded p-1">Seperate</button>
+          Electric Bill:<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, electricBill: "Include" })}>Include</button> <button className="
+            m-3 rounded p-1"> onClick={() => setFormData({ ...formData, electricBill: "Seperate" })}Seperate</button>
           </h6>
           <h6>
-          Parking:<button className="m-3 rounded p-1">Bike</button> <button className="
-            m-3 rounded p-1">Car</button> <button className="
-            m-3 rounded p-1">Both</button>
+          Parking:<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData,Floor: "Bike" })}>Bike</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, Parking:"Car" })}>Car</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, Parking:"Both" })}>Both</button>
           </h6>
           <h6>
-          Non Veg:<button className="m-3 rounded p-1">Yes</button> <button className="
-            m-3 rounded p-1">No</button>
+          Non Veg:<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, nonVeg: true})}>Yes</button> <button className="
+            m-3 rounded p-1 " onClick={() => setFormData({ ...formData, nonVeg: false })}>No</button>
           </h6>
           <h6>
-          Bathroom: <input type="text" className="m-3 rounded p-1" />
+          Bathroom: <input type="text" className="m-3 rounded p-1" onClick={() => setFormData({ ...formData,  Bathroom: Text })}/>
           </h6>
           <h6>
-          Toilet: <input type="text" className="m-3 rounded p-1"/>
+          Toilet: <input type="text" className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Toilet: Text })}/>
           </h6>
           <h6>
-          Balcony: <input type="text" className="m-3 rounded p-1"/>
+          Balcony: <input type="text" className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, Balcony: Text})}/>
           </h6>
-          <h6>
-          Wifi:<button className="m-3 rounded p-1">Yes</button> <button className="
-            m-3 rounded p-1">No</button>
+          
+              <h6>
+                Wifi:
+                <button
+                  type="button"
+                  className="m-3 rounded p-1"
+                  onClick={() => setFormData({ ...formData, wifi: true })}
+                >
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  className="m-3 rounded p-1"
+                  onClick={() => setFormData({ ...formData, wifi: false })}
+                >
+                  No
+                </button>
+              </h6>
+              <hr />
+              <h6>
+          Amenities<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, wifi: true })}>Bed</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, amenities: "Fan" })}>Fan</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, amenities: "Almahri" })}>Almahri</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, amenities: "Study Table" })}>Study Table</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, amenities: "Custom" })}>Custom</button>
           </h6> 
           <hr />
           <h6>
-          Amenities<button className="m-3 rounded p-1">Bed</button> <button className="
-            m-3 rounded p-1">Fan</button> <button className="
-            m-3 rounded p-1">Almahri</button> <button className="
-            m-3 rounded p-1">Study Table</button> <button className="
-            m-3 rounded p-1">Custom</button>
+          Advance booking<button className="m-3 rounded p-1" onClick={() => setFormData({ ...formData, advanceBooking: "Allowed" })}>Allowed</button> <button className="
+            m-3 rounded p-1" onClick={() => setFormData({ ...formData, advanceBooking: "Not Allowed" })}>Not Allowed</button>
           </h6> 
-          <hr />
-          <h6>
-          Advance booking<button className="m-3 rounded p-1">Allowed</button> <button className="
-            m-3 rounded p-1">Not Allowed</button>
-          </h6> 
-          <div className="d-flex justify-content-center align-item-center">
-          <button className="m-3 rounded p-2 btn btn-success"> Back </button>   <button className="m-3 rounded p-2 btn btn-primary">Save  & Continue</button>
-          </div>
-
-        </div>
-        <hr className="m-5"/>
-
-
-        <div>
-          <h5>Photos:</h5>
-          <h6>1 Outside, 4 inside room</h6>
-          <hr className="m-5"/>
-          <h5>Video:</h5>
-          <div className="d-flex justify-content-center align-item-center">
-          <button className="m-3 rounded p-2 btn btn-success"> Back </button>   <button className="m-3 rounded p-2 btn btn-primary">Save  & Continue</button>
-          </div>
-
-        </div>
+              <div>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => setCurrentSection("images")}
+                >
+                  Save & Continue
+                </button>
+              </div>
+            </div>
+          )}
+          {currentSection === "images" && (
+            <div>
+              <h5>Photos:</h5>
+              <input
+                type="file"
+                multiple
+                onChange={(e) =>
+                  setFormData({ ...formData, photos: [...e.target.files] })
+                }
+              />
+              <h5>Video:</h5>
+              <input
+                type="file"
+                onChange={(e) =>
+                  setFormData({ ...formData, video: e.target.files[0] })
+                }
+              />
+              <div>
+                <button type="submit" className="btn btn-success">
+                  Submit
+                </button>
+              </div>
+            </div>
+          )}
+        </form>
       </div>
     </>
   );
