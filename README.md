@@ -15,12 +15,14 @@ A full-stack project with separate `client` and `server` directories.
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 
+```bash
 ### 2. Start Client
 ```bash
 cd server
 npm install
 npm run dev
 
+```bash
 ### 3. Start Server
 ```bash
 cd client
