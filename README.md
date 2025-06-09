@@ -9,7 +9,7 @@ A full-stack project with separate `client` and `server` directories.
 
 ## 🚀 Getting Started
 
-### Follow the Command
+### Follow the Commands
 
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
