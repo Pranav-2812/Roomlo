@@ -23,6 +23,6 @@ npm run dev
 
 ### 3. Start Server
 ```bash
-cd  client
+cd client
 npm install
 npm run dev
