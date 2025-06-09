@@ -18,14 +18,12 @@ cd your-repo-name
 
 ### 2. Start Client
 ```bash
-```bash
 cd server
 npm install
 npm run dev
 
 
 ### 3. Start Server
-```bash
 ```bash
 cd client
 npm install
