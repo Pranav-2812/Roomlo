@@ -5,7 +5,7 @@
 /* body{
   overflow: hidden;
 } */
-.home{
+/* .home{
   background-image: url("../assets/image_buuilding.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,47 +16,47 @@
   object-fit: contain;
   height: 101vh;
   overflow-y: scroll;
-}
-#btm{
+} */
+/* #btm{
   position: absolute;
-}
-.bg-image{
+} */
+/* .bg-image{
   height: 100%;
   backdrop-filter: blur(3px);
-}
-#box{
+} */
+/* #box{
   width: 30%;
   border-radius: 14%;  
   background-color: black;
-}
+} */
 /* Utility classes */
-.text-center {
+/* .text-center {
   text-align: center;
-}
+} */
 #Title{
   font-size: 80px;
 }
-
+/* 
 .text-light {
   color: #ffffff !important;
-}
+} */
 
-.text-dark {
+/* .text-dark {
   color: #000000 !important;
-}
-
+} */
+/* 
 .bg-dark {
   background-color: #333 !important;
 }
 
 .bg-light {
   background-color: #f8f9fa !important;
-}
+} */
 
-.rounded-pill {
+/* .rounded-pill {
   border-radius: 50rem !important;
-}
-@media (max-width:1350px) {
+} */
+/* @media (max-width:1350px) {
   .home{
     margin-top: -5.5%;
   }
@@ -65,79 +65,79 @@
   .home{
     margin-top: -6%;
   }
-}
+} */
 @media (max-width:1125px) {
-  .home{
+  /* .home{
     margin-top: -6.5%;
-  }
-  #box{
+  } */
+  /* #box{
     width: 50%;
     padding: 0%;
-  }
+  } */
 }
 @media (max-width:1050px) {
-  .home{
+  /* .home{
     margin-top: -7%;
-  }
-  #box{
+  } */
+  /* #box{
     width: 40%;
     padding: 0%;
-  }
+  } */
 }
-@media (max-width:950px) {
+/* @media (max-width:950px) {
   .home{
     margin-top: -8%;
   }
-}
+} */
 @media (max-width:850px) {
-  .home{
+  /* .home{
     margin-top: -9%;
-  }
-  #box{
+  } */
+  /* #box{
     width: 50%;
     padding: 0%;
   }
-}
+*/}
 @media (max-width:750px) {
-  .home{
+  /* .home{
     margin-top: -10.5%;
-  }
-  #box{
+  } */
+  /* #box{
     width: 60%;
     padding: 0%;
-  }
+  } */
 }
 @media (max-width: 768px) {
   /* Navbar adjustments */
-  .navbar {
+  /* .navbar {
     width: 100%;
-  }
+  } */
 
 
-  .navbar-brand {
+  /* .navbar-brand {
     font-size: 1rem;
-  }
+  } */
 
-  .navbar-brand img {
+  /* .navbar-brand img {
     width: 35px;
     height: 35px;
-  }
-
+  } */
+/* 
   .navbar .btn {
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
-  }
+  } */
 
   /* Center section adjustments */
-  .container {
+  /* .container {
     max-width: 90%;
-  }
+  } */
 
-  .container h1 {
+  /* .container h1 {
     font-size: 2.5rem;
-  }
+  } */
 
-  .container .bg-dark {
+  /* .container .bg-dark {
     padding: 1.5rem;
   }
 
@@ -151,57 +151,57 @@
 
   .container .bg-dark h5 {
     font-size: 0.875rem;
-  }
-  #box{
+  } */
+  /* #box{
     width: 60%;
     padding: 0%;
-  }
+  } */
 }
 @media (max-width:650px) {
-  .home{
+  /* .home{
     margin-top: -11.5%;
-  }
-  #box{
+  } */
+  /* #box{
     width: 100%;
     padding: 0%;
-  }
-  #box{
+  } */
+  /* #box{
     width: 80%;
     padding: 0%;
-  }
+  } */
 }
 @media (max-width: 576px) {
-  .home{
+  /* .home{
     margin-top: -14%;
-  }
-  .navbar-brand {
+  } */
+  /* .navbar-brand {
     font-size: 1.5rem;
-  }
-  .roomlo {
+  } */
+  /* .roomlo {
     display: none;
-  }
+  } */
   #Title{
     font-size: 40px;
   }
-  #box{
+  /* #box{
     width: 80%;
     padding: 0%;
-  }
-  .navbar-brand img {
+  } */
+  /* .navbar-brand img {
     width: 30px;
     height: 30px;
-  }
+  } */
 
-  .navbar .btn {
+  /* .navbar .btn {
     font-size: 0.75rem;
     padding: 0.4rem 0.75rem;
-  }
-
+  } */
+/* 
   .container h1 {
     font-size: 2rem;
-  }
+  } */
 
-  .container .bg-dark {
+  /* .container .bg-dark {
     padding: 1rem;
     border-radius: 15px;
   }
@@ -216,39 +216,39 @@
 
   .container .bg-dark h5 {
     font-size: 0.75rem;
-  }
-  #box{
+  } */
+  /* #box{
     margin-top: 10%;
     width: 90%;
-  }
+  } */
 }
 @media (max-width:450px) {
-  .home{
+  /* .home{
     margin-top: -20%;
 
-  }
-  #cnt{
+  } */
+  /* #cnt{
     height: 100vh;
-  }
-  #box{
+  } */
+  /* #box{
     margin-top: 5%;
     margin-bottom: 5%v;
     width: 100%;
-  }
-  #btm{
+  } */
+  /* #btm{
     margin-top: 10%;
     position: relative;
-  }
+  } */
 }
 
 @media (max-width:330px) {
-   .home{
+   /* .home{
     margin-top: -25%;
    }
-   
-   #box{
+    */
+   /* #box{
     width: 100%;
     padding: 0;
     
-   }
+   } */
 }
